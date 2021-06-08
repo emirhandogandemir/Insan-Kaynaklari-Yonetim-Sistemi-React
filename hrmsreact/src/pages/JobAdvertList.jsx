@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import JobAdvertService from "../services/jobAdvertService";
-import { Table, Header } from "semantic-ui-react";
+import { Table, Header ,Button} from "semantic-ui-react";
 export default function JobAdvertList() {
   const [jobAdverts, setJobAdverts] = useState([]);
 
@@ -29,6 +29,7 @@ export default function JobAdvertList() {
             <Table.HeaderCell>Yayınlanma Tarihi</Table.HeaderCell>
 
             <Table.HeaderCell>İş Veren Şirket</Table.HeaderCell>
+            <Table.HeaderCell></Table.HeaderCell>
           </Table.Row>
         </Table.Header>
 
@@ -44,6 +45,7 @@ export default function JobAdvertList() {
               <Table.Cell>{jobAdverts.publishedAt}</Table.Cell>
 
               <Table.Cell>{jobAdverts.employer.companyName}</Table.Cell>
+              <Table.Cell> <Button color='grey'>Details</Button></Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>

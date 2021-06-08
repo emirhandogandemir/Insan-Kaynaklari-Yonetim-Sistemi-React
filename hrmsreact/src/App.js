@@ -7,6 +7,7 @@ import Navi from "./layouts/navi/Navi";
 import { Container } from "semantic-ui-react";
 import Footer from "./layouts/footer/Footer";
 
+
 function App() {
   return (
     <div className="App">

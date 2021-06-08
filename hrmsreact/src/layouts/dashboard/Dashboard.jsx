@@ -15,7 +15,7 @@ export default function Dashboard() {
            <SideBar/>
           </GridColumn>
           <GridColumn width={12}>
-       <JobSeeker/>
+       <JobAdvertList/>
           </GridColumn>
         </GridRow>
       </Grid>

@@ -1,6 +1,6 @@
 import React , { useEffect, useState }from 'react'
 import JobSeekerService from '../services/jobSeekerService'
-import {  Table, Header } from "semantic-ui-react";
+import {  Table, Header ,Button,Image} from "semantic-ui-react";
 export default function JobSeeker() {
    
    const [jobSeekers, setJobSeekers] = useState([])
@@ -13,6 +13,7 @@ export default function JobSeeker() {
     return (
         <div>
              <Header as="h2">
+             <Image size='large' avatar src={"../assets/jobseeker.jpg"} style={{ marginRight: '1.5em' }} />
         Job Seekers
         <Header.Subheader>
           Aşağıda sistemimizde olan iş arayanları görmektesiniz
@@ -25,7 +26,7 @@ export default function JobSeeker() {
             <Table.HeaderCell>SoyAdı</Table.HeaderCell>
             <Table.HeaderCell>Email</Table.HeaderCell>
             <Table.HeaderCell>DoğumGünü</Table.HeaderCell> 
-            <Table.HeaderCell>Aktiflik durumu</Table.HeaderCell>
+            <Table.HeaderCell></Table.HeaderCell>
 
           </Table.Row>
         </Table.Header>
@@ -37,7 +38,7 @@ export default function JobSeeker() {
               <Table.Cell>{jobSeeker.lastName}</Table.Cell>
               <Table.Cell>{jobSeeker.email}</Table.Cell>
               <Table.Cell>{jobSeeker.dateOfBirth}</Table.Cell>
-              <Table.Cell>{jobSeeker.active}</Table.Cell>
+              <Table.Cell> <Button color='grey'>Details</Button></Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>

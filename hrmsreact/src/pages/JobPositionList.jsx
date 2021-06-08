@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import JobPositionService from "../services/jobPositionService";
-import {  Table, Header } from "semantic-ui-react";
+import {  Table, Header ,Button} from "semantic-ui-react";
 export default function JobPositionList() {
   const [jobPositions, setJobPositions] = useState([]);
 
@@ -23,6 +23,7 @@ export default function JobPositionList() {
         <Table.Header>
           <Table.Row>
             <Table.HeaderCell>İş Başlığı</Table.HeaderCell>
+            <Table.HeaderCell></Table.HeaderCell>
           </Table.Row>
         </Table.Header>
 
@@ -30,6 +31,7 @@ export default function JobPositionList() {
           {jobPositions.map((jobPosition) => (
             <Table.Row key={jobPosition.id}>
               <Table.Cell>{jobPosition.jobTitle}</Table.Cell>
+              <Table.Cell> <Button color='grey'>Details</Button></Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>
