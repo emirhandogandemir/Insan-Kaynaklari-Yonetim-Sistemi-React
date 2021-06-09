@@ -16,9 +16,9 @@ export default function Navi() {
           <Menu.Item name="Cities" />
           <Menu.Menu position="right">
 
-            <Menu.Item>
+            <Menu.Item> 
               <Button.Group>
-                <Button primary>Sign Up</Button>
+                <Button primary >Sign Up</Button>
                 <Button.Or />
                 <Button positive>Sign In</Button>
               </Button.Group>

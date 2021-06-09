@@ -20,5 +20,5 @@ export default function Dashboard() {
         </GridRow>
       </Grid>
     </div>
-  );
+  ); 
 }
