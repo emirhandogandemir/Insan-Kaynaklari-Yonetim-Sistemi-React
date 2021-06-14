@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import JobAdvertService from "../services/jobAdvertService";
 import { Table, Header ,Button} from "semantic-ui-react";
 export default function JobAdvertList() {
+  
   const [jobAdverts, setJobAdverts] = useState([]);
 
   useEffect(() => {

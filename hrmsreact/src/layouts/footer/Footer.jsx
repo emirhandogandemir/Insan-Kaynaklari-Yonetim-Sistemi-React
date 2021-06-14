@@ -18,23 +18,23 @@ export default function Footer() {
       <Segment
         inverted
         vertical
-        style={{ margin: "8em -2em 3em", padding: "5em 0em" }}
+        style={{ marginBottom:"10em",marginTop:"10em", padding: "5em 0em" }}
       >
         <Container textAlign="center">
           <Grid divided inverted stackable>
-            <Grid.Column width={4}>
+            <Grid.Column width={5}>
               <Header inverted as="h4" content="" />
 
               <Image
                 src={"../assets/hrmsfooter.png"}
                 size="medium"
-               
+              
                 margin="109x"
               />
               <br />
             </Grid.Column>
-            <Grid.Column width={4}>
-              <Header inverted as="h4" content="Social Medya" />
+            <Grid.Column width={5}>
+              <Header style={{marginTop:"4em"}} inverted as="h4" content="Social Medya" />
               <br />
               <br />
               <Button circular color="facebook" icon="facebook" />
@@ -46,8 +46,8 @@ export default function Footer() {
               <Button circular color="google plus" icon="google plus" />
             </Grid.Column>
 
-            <Grid.Column width={8}>
-              <Header inverted as="h4" content="Doğandemirs" />
+            <Grid.Column width={6}>
+              <Header style={{marginTop:"4em"}} inverted as="h4" content="Doğandemirs" />
               <br />
               <br />
               <p>İş Arayanlar ve İş verenler için buluşma noktası</p>

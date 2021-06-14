@@ -1,4 +1,5 @@
 import React , { useEffect, useState }from 'react'
+import { Link } from 'react-router-dom'
 import JobSeekerService from '../services/jobSeekerService'
 import {  Table, Header ,Button,Image} from "semantic-ui-react";
 export default function JobSeeker() {
@@ -38,7 +39,7 @@ export default function JobSeeker() {
               <Table.Cell>{jobSeeker.lastName}</Table.Cell>
               <Table.Cell>{jobSeeker.email}</Table.Cell>
               <Table.Cell>{jobSeeker.dateOfBirth}</Table.Cell>
-              <Table.Cell> <Button color='grey'>Details</Button></Table.Cell>
+          <Table.Cell>  <Link to={`/jobseekers/${jobSeeker.id}`}><Button color='grey'> Details</Button></Link></Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>

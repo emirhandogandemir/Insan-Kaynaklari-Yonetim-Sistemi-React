@@ -9,6 +9,7 @@ import Footer from "./layouts/footer/Footer";
 import Header from "./layouts/header/Headerr";
 
 
+
 function App() {
   return (
     <div className="App">
@@ -18,6 +19,8 @@ function App() {
 <Dashboard/>
 </Container>
 <Footer/>
+
+
     </div>
   );
 }

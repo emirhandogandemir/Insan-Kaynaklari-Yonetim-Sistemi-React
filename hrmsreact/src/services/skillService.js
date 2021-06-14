@@ -1,5 +1,5 @@
 import axios from 'axios'
-import Axios from 'axios'
+
 
 export default class SkillService{
 getSkills(){
