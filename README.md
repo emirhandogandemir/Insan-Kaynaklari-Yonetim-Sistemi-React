@@ -15,8 +15,9 @@
 ![AdminPaneli](https://user-images.githubusercontent.com/74687192/122265076-fb5b6880-cee0-11eb-9695-ffc986ca1780.PNG)
 
 ### Faydalandığım kaynaklar
--JavaScript Spread : [Javascript spread kullanımı](https://muratdogan.medium.com/sen-javascriptin-bir-lütfusun-spread-operatör-extended-version-fa5de70beaeb)
--JavaScript Rest Parameters : [Js Rest parameters](https://thrkardak.medium.com/javascript-harikaları-1-rest-parameters-7ba6ddcf6874)
--Javascript Destructing Assignment : [Destructive Assignment](https://thrkardak.medium.com/javascript-harikaları-3-destructuring-assignment-64cbb9fe3355)
--React Hooks : [React Hooks nedir ve Nasıl Kullanılır](https://devnot.com/2018/react-hooks-nedir-ve-nasil-kullanilir/)
+---
+- JavaScript Spread : [Javascript spread kullanımı](https://muratdogan.medium.com/sen-javascriptin-bir-lütfusun-spread-operatör-extended-version-fa5de70beaeb)
+- JavaScript Rest Parameters : [Js Rest parameters](https://thrkardak.medium.com/javascript-harikaları-1-rest-parameters-7ba6ddcf6874)
+- Javascript Destructing Assignment : [Destructive Assignment](https://thrkardak.medium.com/javascript-harikaları-3-destructuring-assignment-64cbb9fe3355)
+- React Hooks : [React Hooks nedir ve Nasıl Kullanılır](https://devnot.com/2018/react-hooks-nedir-ve-nasil-kullanilir/)
 
