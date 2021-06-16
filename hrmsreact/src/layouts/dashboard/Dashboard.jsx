@@ -9,6 +9,8 @@ import { Route } from "react-router";
 import JobSeekerDetail from "../../pages/JobSeekerDetail";
 import EmployerList from "../../pages/EmployerList";
 import JobAdvertAdd from "../../pages/JobAdvertAdd";
+import AdminJobAdvertList from "../../pages/Admin/JobAdverts/AdminJobAdvertList";
+import EmployerJobAdvertList from "../../pages/Employer/EmployerJobAdvertList";
 
 export default function Dashboard() {
   return (
@@ -26,6 +28,8 @@ export default function Dashboard() {
             <Route exact path="/jobpositions" component={JobPositionList} />
             <Route path ="/employers" component={EmployerList}/>
             <Route path="/jobadvertadd" component ={JobAdvertAdd}/>
+            <Route path="/adminjobadvertlist" component={AdminJobAdvertList}/>
+            <Route path="/employerjobadvertlist" component={EmployerJobAdvertList}/>
           </GridColumn>
         </GridRow>
       </Grid>

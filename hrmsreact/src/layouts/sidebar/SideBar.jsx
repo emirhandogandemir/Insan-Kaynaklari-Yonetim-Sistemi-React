@@ -33,13 +33,18 @@ export default function SideBar() {
         <Link to="/jobadverts">
         <Menu.Item as="a">
           <Icon name="laptop" />
-          JobAdverts
+          İş arayanlar için iş ilanları
         </Menu.Item>
         </Link>
+        <Link to="/employerjobadvertlist">
         <Menu.Item as="a">
-          <Icon name="" />
-          
+          <Icon name="briefcase" />
+          İş verenler için iş ilanı düzenleme
         </Menu.Item>
+
+
+        </Link>
+      
         <Menu.Item as="a">
           <Icon name="" />
          

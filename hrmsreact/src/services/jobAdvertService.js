@@ -11,6 +11,29 @@ export default class JobAdvertService {
     return axios.post("http://localhost:8080/api/jobadverts/add", values);
   }
 
+
+  //--------------------
+
+  getAllActiveTrueAndOpenTrueJobAdverts(){
+    return axios.get("http://localhost:8080/api/jobadverts/getAllActiveAndOpenJobAdverts")
+  }
+
+  getAllActiveFalseAndOpenTrueJobAdverts(){
+    return axios.get("http://localhost:8080/api/jobadverts/getAllOpenJobAdvertsAndIsActiveFalse")
+  }
+
+ changeActiveStatus(id){
+   return axios.post("http://localhost:8080/api/jobadverts/changeactivestatus?id="+id)
+   
+ }
+ changeOpenStatus(id){
+   return axios.post("http://localhost:8080/api/jobadverts/changeopenstatus?id="+id)
+ }
+
+getAllByEmployerId(employerId){
+  return axios.get("http://localhost:8080/api/jobadverts/getAllByEmployerId?id="+employerId)
+}
+  //----------------------
   getAllOpenJobAdvertByEmployer(id) {
     return axios.get(
         // açık is ilanlarını iş veren idsine göre getirir
@@ -27,8 +50,5 @@ export default class JobAdvertService {
      return axios.get("http://localhost:8080/api/jobadverts/getAllOpenJobAdvertList")
  }
 
- changeOpenToClose(id){
-     // aktif olan iş ilanını kapamak için 
-     return axios.post("http://localhost:8080/api/jobadverts/changeOpenToClose?id="+id)
- }
+
 }
