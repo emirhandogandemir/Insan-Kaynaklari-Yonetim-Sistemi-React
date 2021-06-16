@@ -20,4 +20,5 @@
 - JavaScript Rest Parameters : [Js Rest parameters](https://thrkardak.medium.com/javascript-harikaları-1-rest-parameters-7ba6ddcf6874)
 - Javascript Destructing Assignment : [Destructive Assignment](https://thrkardak.medium.com/javascript-harikaları-3-destructuring-assignment-64cbb9fe3355)
 - React Hooks : [React Hooks nedir ve Nasıl Kullanılır](https://devnot.com/2018/react-hooks-nedir-ve-nasil-kullanilir/)
+- React Props Kullanımı :[React Componentler props Kullanımı](https://medium.com/kodcular/react-componentleri-arası-prop-geçişi-a1462ddeac52)
 - React Router Kullanımı : [React Hooks Nedir Nasıl Kullanılır](https://www.anatoliacode.com/blog/react-router-nedir-nasil-kullanilir)
