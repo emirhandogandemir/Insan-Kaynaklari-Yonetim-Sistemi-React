@@ -7,6 +7,13 @@
 ### React ilk ödev sonunda başlangıç çıktım bu şekildeydi
 ![hrmsreact1](https://user-images.githubusercontent.com/74687192/121377703-3bec3c80-c94b-11eb-8710-32e3e54d4f5c.PNG)
 
+### React Doğrulama ödevlerinden sonra projem bu şekile geldi
+![EmployerPanel](https://user-images.githubusercontent.com/74687192/122265058-f72f4b00-cee0-11eb-928f-0a80d0de5351.PNG)
+
+![HomePage](https://user-images.githubusercontent.com/74687192/122265067-f8f90e80-cee0-11eb-9b68-f1b05f79f021.PNG)
+
+![AdminPaneli](https://user-images.githubusercontent.com/74687192/122265076-fb5b6880-cee0-11eb-9695-ffc986ca1780.PNG)
+
 ### Faydalandığım kaynaklar
 -JavaScript Spread : [Javascript spread kullanımı](https://muratdogan.medium.com/sen-javascriptin-bir-lütfusun-spread-operatör-extended-version-fa5de70beaeb)
 -JavaScript Rest Parameters : [Js Rest parameters](https://thrkardak.medium.com/javascript-harikaları-1-rest-parameters-7ba6ddcf6874)
