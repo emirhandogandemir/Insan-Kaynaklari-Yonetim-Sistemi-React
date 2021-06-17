@@ -5,10 +5,12 @@ import { Grid, Header, Icon, Search, Segment, Image } from "semantic-ui-react";
 export default function Headerr() {
   return (
     <div>
+   
       <Segment
+     
         inverted
         placeholder
-        style={{ margin: "3em -2em 3em", padding: "30pm", height: "200px" }}
+        style={{ margin: "3em -2em 3em", padding: "30pm", height: "200px"}}
       >
         <Grid stackable textAlign="center">
           <Grid.Row verticalAlign="middle">
@@ -21,8 +23,8 @@ export default function Headerr() {
             </Grid.Column>
             <Grid.Column width={3}>
               <Header icon>
-                <Icon name="world" />
-                Find City
+                <Icon inverted color="black" name="world" />
+                <p style={{color:"white"}}> Find City</p>  
               </Header>
 
               <Search placeholder="Search cities..." />
@@ -30,8 +32,8 @@ export default function Headerr() {
 
             <Grid.Column width={3}>
               <Header icon>
-                <Icon name="search" />
-                Find Job
+                <Icon inverted color="black" name="search" />
+               <p style={{color:"white"}}>Find Job</p> 
               </Header>
               <Search placeholder="Search job adverts..." />
             </Grid.Column>
@@ -39,6 +41,7 @@ export default function Headerr() {
           </Grid.Row>
         </Grid>
       </Segment>
+      
     </div>
   );
 }

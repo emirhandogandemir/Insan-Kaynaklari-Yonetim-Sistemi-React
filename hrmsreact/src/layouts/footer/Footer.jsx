@@ -17,6 +17,7 @@ export default function Footer() {
     <div >
       <Segment
         inverted
+       
         vertical
         style={{ marginBottom:"10em",marginTop:"10em", padding: "5em 0em" }}
       >

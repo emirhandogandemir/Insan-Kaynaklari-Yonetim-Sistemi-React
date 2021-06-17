@@ -21,7 +21,7 @@ useEffect (()=>{
         <Card fluid style={{marginLeft:"125px"}}>
        
           <Card.Content>
-            <Card.Header> <div style={{marginBottom:"20px",boxShadow:"3px 7px 5px #473c8b"}}> <h1 style={{color:"white",backgroundColor:"orange",borderRadius:"15px",border:"solid"}}> {jobAdvert?.employer?.companyName} şirketi</h1></div> </Card.Header>
+            <Card.Header> <div style={{marginBottom:"20px",boxShadow:"3px 7px 5px #473c8b"}}> <h1 style={{color:"white",backgroundColor:"darkcyan",borderRadius:"15px",border:"solid"}}> {jobAdvert?.employer?.companyName} şirketi</h1></div> </Card.Header>
             <div style={{float:"left",margin:"5px"}}><Image src={"../../assets/hrms.png"} size='small' spaced  style={{borderRadius:"15px"}}/> </div>
             
             <div style={{textAlign:"left"}}>

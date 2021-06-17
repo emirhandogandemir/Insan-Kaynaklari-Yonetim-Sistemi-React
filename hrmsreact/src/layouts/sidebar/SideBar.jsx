@@ -5,40 +5,36 @@ import { Link } from 'react-router-dom'
 export default function SideBar() {
   return (
     <div>
-    <Menu inverted icon="labeled" vertical>
-    <Link to="/">
-    <Menu.Item as="a">
-          <Icon name="home" />
-          Home
-        </Menu.Item>
-        </Link>
+      <div>
+    <Menu inverted icon="labeled" vertical style={{borderRadius:"20px"}}>
+    
     <Link to="/jobpositions">
     <Menu.Item as="a">
-          <Icon name="briefcase" />
+          <Icon circular inverted color="blue" name="briefcase" />
           Job Positions
         </Menu.Item>
         </Link>
         <Link to="/jobseekers">
         <Menu.Item as="a">
-          <Icon name="user circle" />
+          <Icon circular inverted color="blue" name="user circle" />
           JobSeeker
         </Menu.Item>
         </Link>
         <Link to="/employers">
         <Menu.Item as="a">
-          <Icon name="user circle" />
+          <Icon circular inverted color="blue" name="users" />
           Employeer
         </Menu.Item>
         </Link>
         <Link to="/jobadverts">
         <Menu.Item as="a">
-          <Icon name="laptop" />
+          <Icon circular inverted color="blue" name="laptop" />
           İş arayanlar için iş ilanları
         </Menu.Item>
         </Link>
         <Link to="/employerjobadvertlist">
         <Menu.Item as="a">
-          <Icon name="briefcase" />
+          <Icon circular inverted color="blue" name="briefcase" />
           İş verenler için iş ilanı düzenleme
         </Menu.Item>
 
@@ -55,7 +51,7 @@ export default function SideBar() {
         </Menu.Item>
 
     </Menu>
-      
+    </div>
      
     </div>
   );
