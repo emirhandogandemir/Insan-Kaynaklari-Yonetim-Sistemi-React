@@ -22,4 +22,5 @@
 - React Hooks : [React Hooks nedir ve Nasıl Kullanılır](https://devnot.com/2018/react-hooks-nedir-ve-nasil-kullanilir/)
 - React Props Kullanımı :[React Componentler props Kullanımı](https://medium.com/kodcular/react-componentleri-arası-prop-geçişi-a1462ddeac52)
 - React Router Kullanımı : [React Hooks Nedir Nasıl Kullanılır](https://www.anatoliacode.com/blog/react-router-nedir-nasil-kullanilir)
+- React Router Kullanımı Baştan Sona : [React Router Kullanımı Baştan Sona](https://ysoftaoglu.com/post/redux-nedir-nasil-kullanilir/)
 - React Redux  :[Redux Nedir](https://devnot.com/2018/redux-nedir/)
