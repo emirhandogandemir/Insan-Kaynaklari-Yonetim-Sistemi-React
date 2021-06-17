@@ -10,6 +10,7 @@ import { useFormik } from "formik";
 import swal from "sweetalert";
 export default function JobAdvertAdd({triggerButton}) {
 
+
   const JobPostingAddSchema = Yup.object().shape({
     deadLine: Yup.date().nullable().required("Bu alanın doldurulması zorunludur"),
     description: Yup.string().required("Bu alanın doldurulması zorunludur"),
@@ -37,14 +38,21 @@ export default function JobAdvertAdd({triggerButton}) {
       
     },
     validationSchema: JobPostingAddSchema,
-    onSubmit: (values) => {
-      values.employerId = 1; // jWt olmadığı için fake yapıdır
 
-   jobAdvertService.add(values).then((result)=>swal(`${result.data.message}`,`${values.description}`, "success"));
-   // console.log(values)
+
+    onSubmit: (values) => {
+      values.employerId = 11; // jWt olmadığı için fake yapıdır
+
+   //jobAdvertService.add(values).then((result)=>swal(`${result.data.message}`,`${values.description}`, "success"));
+   console.log(values)
     }
+
+
   });
 
+
+
+  
   let jobAdvertService = new JobAdvertService();
   
   const [cities, setCities] = useState([]);
@@ -69,30 +77,40 @@ export default function JobAdvertAdd({triggerButton}) {
       .then((result) => setWorkTypes(result.data.data));
     
   }, []);
+
+
   const workHourOption = workHours.map((workHour,index)=>({
     key: index,
     text:workHour.workHour,
     value: workHour.id
   }))
+
+
   const workTypeOption = workTypes.map((workType,index)=>({
     key: index,
     text:workType.workType,
     value: workType.id
   }))
+
   const cityOption = cities.map((city, index) => ({
     key: index,
     text: city.name,
     value: city.id,
   }));
+
   const jobTitleOption = jobPositions.map((jobTitles, index) => ({
     key: index,
     text: jobTitles.jobTitle,
     value: jobTitles.id,
   }));
+
   const handleChangeSemantic = (value, fieldName) => {
     formik.setFieldValue(fieldName, value);
   }
+
+
   return (
+
     <div >
      
       <div>

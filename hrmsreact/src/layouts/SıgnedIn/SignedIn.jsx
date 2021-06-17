@@ -5,7 +5,7 @@ export default function SignedIn({ signOut }) {
   return (
     <div>
       <Menu.Item>
-        <Image avatar spaced="right" src={"../../../assets/jobseeker.jpg"} />
+        <Image avatar spaced="right" src={"assets/jobseeker.jpg"} />
         <Dropdown pointing="top left" text="Emirhan">
           <Dropdown.Menu>
             <Dropdown.Item text="Bilgilerim" icon="info" />
