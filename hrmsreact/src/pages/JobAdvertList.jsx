@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import JobAdvertService from "../services/jobAdvertService";
 import { Table, Header ,Button} from "semantic-ui-react";
+import { Link } from "react-router-dom";
 export default function JobAdvertList() {
   
   const [jobAdverts, setJobAdverts] = useState([]);
@@ -46,7 +47,7 @@ export default function JobAdvertList() {
               <Table.Cell>{jobAdverts.publishedAt}</Table.Cell>
 
               <Table.Cell>{jobAdverts.employer.companyName}</Table.Cell>
-              <Table.Cell> <Button color='grey'>Details</Button></Table.Cell>
+              <Table.Cell> <Link to={`/jobadverts/${jobAdverts.id}`}><Button color='grey'>Details</Button></Link></Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>

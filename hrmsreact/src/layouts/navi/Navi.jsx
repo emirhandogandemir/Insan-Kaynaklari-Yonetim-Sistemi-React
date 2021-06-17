@@ -22,8 +22,6 @@ function handleSıgnIn(){
 }
   return (
 
-  
-
 
     <div>
        <Menu inverted fixed="top" size="large">
