@@ -30,10 +30,8 @@ function handleSıgnIn(){
           <Image size='mini' circular src={"../assets/hrmslogo.jpg"} style={{ marginRight: '1.5em' }} />
             Hrms
           </Menu.Item>
-          <Menu.Item name="Home" />
           <Menu.Item name="Job Advert" />
           <Menu.Item name="Companies" />
-          <Menu.Item name="Cities" />
           <Menu.Menu position="right">
      <JobPostButton/>
 

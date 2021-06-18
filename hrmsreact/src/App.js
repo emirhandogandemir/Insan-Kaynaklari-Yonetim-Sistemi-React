@@ -15,11 +15,11 @@ function App() {
     <div className="App" style={{backgroundColor:"#f2f2f2"}}>
       <Navi/>
 <Header/>
-<Container className="main">
+
 
 <Dashboard/>
 
-</Container>
+
 
 <Footer/>
 

@@ -13,6 +13,7 @@ import JobAdvertAdd from "../../pages/JobAdvertAdd";
 import AdminJobAdvertList from "../../pages/Admin/JobAdverts/AdminJobAdvertList";
 import EmployerJobAdvertList from "../../pages/Employer/EmployerJobAdvertList";
 import JobAdvertDetail from "../../pages/JobAdvertDetail";
+import EmployerDetail from "../../pages/EmployerDetail";
 
 export default function Dashboard() {
   return (
@@ -22,24 +23,25 @@ export default function Dashboard() {
           <GridColumn width={3}>
             <SideBar />
           </GridColumn>
-          <GridColumn width={12}>
+          <GridColumn width={11}>
             <Route exact path="/" component={Home} />
             <Route exact path="/jobseekers" component={JobSeeker} />
             <Route path="/jobseekers/:id" component={JobSeekerDetail} />
             <Route exact path="/jobadverts" component={JobAdvertList} />
             <Route path="/jobadverts/:id" component={JobAdvertDetail}></Route>
             <Route exact path="/jobpositions" component={JobPositionList} />
-            <Route path="/employers" component={EmployerList} />
+            <Route exact path="/employers" component={EmployerList} />
+            <Route path="/employers/:id" component={EmployerDetail}/>
             <Route path="/jobadvertadd" component={JobAdvertAdd} />
-
+           
             <Route path="/adminjobadvertlist" component={AdminJobAdvertList} />
             <Route
               path="/employerjobadvertlist"
               component={EmployerJobAdvertList}
             />
           </GridColumn>
-          <GridColumn width={1}>
-            <div style={{ position: "fixed" }}>
+          <GridColumn width={2}>
+            <div style={{ position: "fixed" ,marginLeft:"40px"}}>
               <Link to="/"> 
                <Icon.Group size="huge">
                 <Icon loading color="blue" size="big" name="circle notch" />

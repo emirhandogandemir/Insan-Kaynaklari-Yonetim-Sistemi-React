@@ -12,13 +12,14 @@ export default function JobAdvertAdd({triggerButton}) {
 
 
   const JobPostingAddSchema = Yup.object().shape({
+
     deadLine: Yup.date().nullable().required("Bu alanın doldurulması zorunludur"),
     description: Yup.string().required("Bu alanın doldurulması zorunludur"),
-    jobPositionId: Yup.string().required("Bu alanın doldurulması zorunludur"),
-    workTypeId: Yup.string().required("Bu alanın doldurulması zorunludur"),
-    workHourId: Yup.string().required("Bu alanın doldurulması zorunludur"),
-    openPositionCount: Yup.string().required("Posizyon sayısı zorunludur").min(1,"Posizyon sayısı 1 den küçük olamaz"),
-    cityId: Yup.string().required("Bu alanın doldurulması zorunludur"),
+    jobPositionId: Yup.number().required("Bu alanın doldurulması zorunludur"),
+    workTypeId: Yup.number().required("Bu alanın doldurulması zorunludur"),
+    workHourId: Yup.number().required("Bu alanın doldurulması zorunludur"),
+    openPositionCount: Yup.number().required("Posizyon sayısı zorunludur").min(1,"Posizyon sayısı 1 den küçük olamaz"),
+    cityId: Yup.number().required("Bu alanın doldurulması zorunludur"),
     maxSalary: Yup.number().min(0,"0 Dan az olamaz").required("Bu alan zorunludur"),
     minSalary: Yup.number().min(0,"0 Dan az olamaz").required("Bu alan zorunludur")
   });

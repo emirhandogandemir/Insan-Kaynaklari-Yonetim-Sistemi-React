@@ -18,7 +18,7 @@ useEffect (()=>{
     return (
         <div>
            
-        <Card fluid style={{marginLeft:"125px"}}>
+        <Card fluid >
        
           <Card.Content>
             <Card.Header> <div style={{marginBottom:"20px",boxShadow:"3px 7px 5px #473c8b"}}> <h1 style={{color:"white",backgroundColor:"darkcyan",borderRadius:"15px",border:"solid"}}> {jobAdvert?.employer?.companyName} şirketi</h1></div> </Card.Header>

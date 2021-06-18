@@ -1,6 +1,7 @@
 import React,{useState,useEffect}from 'react'
 import EmployerService from "../services/employerService"
 import { Table, Header ,Button} from "semantic-ui-react";
+import { Link } from 'react-router-dom';
 export default function EmployerList() {
 
     const [employers, setEmployers] = useState([])
@@ -29,8 +30,8 @@ export default function EmployerList() {
         <Table.Body>
           {employers.map((employer) => (
             <Table.Row key={employer.id}>
-              <Table.Cell>{employer.companyName}</Table.Cell>
-              <Table.Cell> <Button color='grey'>Details</Button></Table.Cell>
+              <Table.Cell> <h3>{employer.companyName}</h3></Table.Cell>
+              <Table.Cell> <Link to={`/employers/${employer.id}`}><Button color='grey'>Details</Button></Link></Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>
