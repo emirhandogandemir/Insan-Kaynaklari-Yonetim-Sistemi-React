@@ -51,7 +51,7 @@ export default function Home() {
               "I shouldn't have gone with their competitor."
             </Header>
             <p style={{ fontSize: '1.33em' }}>
-              <Image avatar src={"../../../assets/admin.jpeg"} />
+              <Image avatar src={"../../../assets/admin.jpeg"}  />
            <div style={{textShadow:"#555 5px 5px 5px"}}> <b>DOGANDEMİR</b> Chief Of Project</div>  
             </p>
           
