@@ -10,7 +10,7 @@
 ### React Doğrulama ödevlerinden sonra projem bu şekile geldi
 ![EmployerPanel](https://user-images.githubusercontent.com/74687192/122265058-f72f4b00-cee0-11eb-928f-0a80d0de5351.PNG)
 
-![HomePage](https://user-images.githubusercontent.com/74687192/122265067-f8f90e80-cee0-11eb-9b68-f1b05f79f021.PNG)
+
 
 ![AdminPaneli](https://user-images.githubusercontent.com/74687192/122265076-fb5b6880-cee0-11eb-9695-ffc986ca1780.PNG)
 
