@@ -4,12 +4,14 @@
 ![ComponentUml](https://user-images.githubusercontent.com/74687192/121379406-a9e53380-c94c-11eb-9c78-d8b802f1484e.PNG)
 
 
-### React ilk ödev sonunda başlangıç çıktım bu şekildeydi
+### React başlangıç çıktım bu şekildeydi
 ![hrmsreact1](https://user-images.githubusercontent.com/74687192/121377703-3bec3c80-c94b-11eb-8710-32e3e54d4f5c.PNG)
 
-### React Doğrulama ödevlerinden sonra projem bu şekile geldi
+### React Doğrulamadam sonra projem bu şekile geldi
 ![EmployerPanel](https://user-images.githubusercontent.com/74687192/122265058-f72f4b00-cee0-11eb-928f-0a80d0de5351.PNG)
 
+
+![HomePageReact](https://user-images.githubusercontent.com/74687192/122636910-6af57180-d0f4-11eb-90c3-bc40252c8f05.PNG)
 
 
 ![AdminPaneli](https://user-images.githubusercontent.com/74687192/122265076-fb5b6880-cee0-11eb-9695-ffc986ca1780.PNG)
