@@ -36,6 +36,19 @@ export default class JobAdvertService {
 getAllByEmployerId(employerId){
   return axios.get("http://localhost:8080/api/jobadverts/getAllByEmployerId?id="+employerId)
 }
+
+
+getAllByCityIdAndWorkTypeId(cityId,workTypeId){
+return axios.get(`http://localhost:8080/api/jobadverts/getAllByCityIdAndWorkTypeId?=${cityId}&workTypeId=${workTypeId}`)
+}
+
+getAllByCityId(cityId){
+return axios.get("http://localhost:8080/api/jobadverts/getAllByCityId?cityId="+cityId)
+}
+getAllByWorkTypeId(workTypeId){
+return axios.get("http://localhost:8080/api/jobadverts/getAllByWorkTypeId?workTypeId="+workTypeId)
+}
+
   //----------------------
   getAllOpenJobAdvertByEmployer(id) {
     return axios.get(

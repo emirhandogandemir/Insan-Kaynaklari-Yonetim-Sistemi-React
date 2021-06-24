@@ -1,33 +1,63 @@
 import React, { useEffect, useState } from "react";
 import JobAdvertService from "../services/jobAdvertService";
-import { Table, Header ,Button, Rating} from "semantic-ui-react";
+import { Table, Header, Button, Rating } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { addToFavorite } from "../store/actions/favoriteAction";
 import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
+import CityFilter from "../layouts/cityFilter/CityFilter";
+import WorkTypeFilter from "../layouts/workTypeFilter/WorkTypeFilter";
 export default function JobAdvertList() {
-  
-  const [jobAdverts, setJobAdverts] = useState([]);
 
-   const dispatch = useDispatch();
+  const [jobAdverts, setJobAdverts] = useState([]);//default
 
+  const [filteredJobAdverts, setFilteredJobAdverts] = useState(null);//filtrelenmiş state
+
+  const [selectedCity, setSelectedCity] = useState(null);
+
+  const [selectedWorkType, setSelectedWorkType] = useState(null);
 
   useEffect(() => {
     let jobAdvertService = new JobAdvertService();
     jobAdvertService
       .getAllActiveTrueAndOpenTrueJobAdverts()
       .then((result) => setJobAdverts(result.data.data));
-  });
+  }, []);
 
+  useEffect(() => {
+    let filteredJobByJobAdverts;
+    if (selectedCity && selectedWorkType) {
+      filteredJobByJobAdverts = jobAdverts.filter(
+        (jobAdvert) =>
+          jobAdvert.city.id === selectedCity &&
+          jobAdvert.workType.id === selectedWorkType
+      );
+    } else if (selectedCity) {
+      filteredJobByJobAdverts = jobAdverts.filter(
+        (jobAdvert) => jobAdvert.city.id === selectedCity
+      );
+    } else if (selectedWorkType) {
+      filteredJobByJobAdverts = jobAdverts.filter(
+        (jobAdvert) => jobAdvert.workType.id === selectedWorkType
+      );
+    } else {
+      filteredJobByJobAdverts = null;
+    }
+    setFilteredJobAdverts(filteredJobByJobAdverts);
+  }, [ selectedCity,selectedWorkType]);
 
-  const handleAddToFavorite =(jobAdvert)=>{
+  const dispatch = useDispatch();
+
+  const handleAddToFavorite = (jobAdvert) => {
     dispatch(addToFavorite(jobAdvert));
-    toast.success(`${jobAdvert.jobPosition.jobTitle} favorilere eklendi`)
-
-  }
+    toast.success(`${jobAdvert.jobPosition.jobTitle} favorilere eklendi`);
+  };
 
   return (
     <div>
+      <CityFilter onSelect={handleSelectCity} />
+      <WorkTypeFilter onSelect={handleSelectWorkType} />
+
       <Header as="h2">
         Job Adverts
         <Header.Subheader>
@@ -50,25 +80,73 @@ export default function JobAdvertList() {
         </Table.Header>
 
         <Table.Body>
-          {jobAdverts.map((jobAdvert) => (
-            <Table.Row key={jobAdvert.id}>
-              <Table.Cell>{jobAdvert.jobPosition.jobTitle}</Table.Cell>
-              <Table.Cell>{jobAdvert.description}</Table.Cell>
-              <Table.Cell>{jobAdvert.city.name}</Table.Cell>
-              <Table.Cell>
-                {jobAdvert.salaryMin}-{jobAdvert.salaryMax}
-              </Table.Cell>
-              <Table.Cell>{jobAdvert.publishedAt}</Table.Cell>
+          {filteredJobAdverts
+            ? filteredJobAdverts.map((jobAdvert) => (
+                <Table.Row key={jobAdvert.id}>
+                  <Table.Cell>{jobAdvert.jobPosition.jobTitle}</Table.Cell>
+                  <Table.Cell>{jobAdvert.description}</Table.Cell>
+                  <Table.Cell>{jobAdvert.city.name}</Table.Cell>
+                  <Table.Cell>
+                    {jobAdvert.salaryMin}-{jobAdvert.salaryMax}
+                  </Table.Cell>
+                  <Table.Cell>{jobAdvert.publishedAt}</Table.Cell>
 
-              <Table.Cell>{jobAdvert.employer.companyName}</Table.Cell>
-              <Table.Cell> <Link to={`/jobadverts/${jobAdvert.id}`}><Button color='grey'>Details</Button></Link></Table.Cell>
-              <Table.Cell><Rating onClick={()=>handleAddToFavorite(jobAdvert)} icon='heart' defaultRating={0} maxRating={1}  /></Table.Cell>
-            </Table.Row>
-          ))}
+                  <Table.Cell>{jobAdvert.employer.companyName}</Table.Cell>
+                  <Table.Cell>
+                    {" "}
+                    <Link to={`/jobadverts/${jobAdvert.id}`}>
+                      <Button color="grey">Details</Button>
+                    </Link>
+                  </Table.Cell>
+                  <Table.Cell>
+                    <Rating
+                      onClick={() => handleAddToFavorite(jobAdvert)}
+                      icon="heart"
+                      defaultRating={0}
+                      maxRating={1}
+                    />
+                  </Table.Cell>
+                </Table.Row>
+              ))
+            : jobAdverts.map((jobAdvert) => (
+                <Table.Row key={jobAdvert.id}>
+                  <Table.Cell>{jobAdvert.jobPosition.jobTitle}</Table.Cell>
+                  <Table.Cell>{jobAdvert.description}</Table.Cell>
+                  <Table.Cell>{jobAdvert.city.name}</Table.Cell>
+                  <Table.Cell>
+                    {jobAdvert.salaryMin}-{jobAdvert.salaryMax}
+                  </Table.Cell>
+                  <Table.Cell>{jobAdvert.publishedAt}</Table.Cell>
+
+                  <Table.Cell>{jobAdvert.employer.companyName}</Table.Cell>
+                  <Table.Cell>
+                    {" "}
+                    <Link to={`/jobadverts/${jobAdvert.id}`}>
+                      <Button color="grey">Details</Button>
+                    </Link>
+                  </Table.Cell>
+                  <Table.Cell>
+                    <Rating
+                      onClick={() => handleAddToFavorite(jobAdvert)}
+                      icon="heart"
+                      defaultRating={0}
+                      maxRating={1}
+                    />
+                  </Table.Cell>
+                </Table.Row>
+              ))}
         </Table.Body>
 
         <Table.Footer></Table.Footer>
       </Table>
     </div>
   );
+
+  function handleSelectWorkType(workTypeId) {
+    setSelectedWorkType(workTypeId);
+  }
+
+  function handleSelectCity(cityId) {
+    setSelectedCity(cityId);
+  }
 }

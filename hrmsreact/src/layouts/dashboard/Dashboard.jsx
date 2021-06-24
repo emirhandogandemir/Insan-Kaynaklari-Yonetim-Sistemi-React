@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import JobPositionList from "../../pages/JobPositionList";
 import { Grid, GridColumn, GridRow, Icon } from "semantic-ui-react";
 import Home from "../homepage/Home";
@@ -15,7 +15,12 @@ import EmployerJobAdvertList from "../../pages/Employer/EmployerJobAdvertList";
 import JobAdvertDetail from "../../pages/JobAdvertDetail";
 import EmployerDetail from "../../pages/EmployerDetail";
 
+import JobAdvertService from "../../services/jobAdvertService";
 export default function Dashboard() {
+
+
+
+
   return (
     <div>
       <Grid>
@@ -24,21 +29,22 @@ export default function Dashboard() {
             <SideBar />
           </GridColumn>
           <GridColumn width={11}>
+         
             <Route exact path="/" component={Home} />
             <Route exact path="/jobseekers" component={JobSeeker} />
             <Route path="/jobseekers/:id" component={JobSeekerDetail} />
-            <Route exact path="/jobadverts" component={JobAdvertList} />
+            <Route exact path="/jobadverts" > <JobAdvertList> </JobAdvertList> </Route>
             <Route path="/jobadverts/:id" component={JobAdvertDetail}></Route>
             <Route exact path="/jobpositions" component={JobPositionList} />
             <Route exact path="/employers" component={EmployerList} />
             <Route path="/employers/:id" component={EmployerDetail}/>
             <Route path="/jobadvertadd" component={JobAdvertAdd} />
-           
-            <Route path="/adminjobadvertlist" component={AdminJobAdvertList} />
+       
             <Route
-              path="/employerjobadvertlist"
+              path="/employerjobadvertlist" 
               component={EmployerJobAdvertList}
-            />
+          />
+          
           </GridColumn>
           <GridColumn width={2}>
             <div style={{ position: "fixed" ,marginLeft:"40px"}}>
@@ -55,4 +61,7 @@ export default function Dashboard() {
       </Grid>
     </div>
   );
+
+
+
 }

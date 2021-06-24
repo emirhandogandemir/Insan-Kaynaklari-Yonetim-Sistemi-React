@@ -1,18 +1,15 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import "./Header.css";
-import CityFilter from "../cityFilter/CityFilter";
-import WorkTypeFilter from "../workTypeFilter/WorkTypeFilter"
+
 import { Grid, Header, Icon, Search, Segment, Image } from "semantic-ui-react";
 
 export default function Headerr() {
   return (
     <div>
-   
       <Segment
-     
         inverted
         placeholder
-        style={{ margin: "3em -2em 3em", padding: "30pm", height: "200px"}}
+        style={{ margin: "3em -2em 3em", padding: "30pm", height: "200px" }}
       >
         <Grid stackable textAlign="center">
           <Grid.Row verticalAlign="middle">
@@ -26,24 +23,20 @@ export default function Headerr() {
             <Grid.Column width={3}>
               <Header icon>
                 <Icon inverted color="black" name="world" />
-                <p style={{color:"white"}}> Find City</p>  
+                <p style={{ color: "white" }}> Find City</p>
               </Header>
-
-             <CityFilter/>
             </Grid.Column>
 
             <Grid.Column width={3}>
               <Header icon>
                 <Icon inverted color="black" name="search" />
-               <p style={{color:"white"}}>Find Work Type</p> 
+                <p style={{ color: "white" }}>Find Work Type</p>
               </Header>
-           <WorkTypeFilter/>
             </Grid.Column>
             <Grid.Column width={1}></Grid.Column>
           </Grid.Row>
         </Grid>
       </Segment>
-      
     </div>
   );
 }
