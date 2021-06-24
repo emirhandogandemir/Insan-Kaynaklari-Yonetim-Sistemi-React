@@ -50,9 +50,6 @@ export default function JobAdvertAdd({triggerButton}) {
 
 
   });
-
-
-
   
   let jobAdvertService = new JobAdvertService();
   

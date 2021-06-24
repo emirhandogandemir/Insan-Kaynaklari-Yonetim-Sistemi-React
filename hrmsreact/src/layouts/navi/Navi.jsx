@@ -5,7 +5,12 @@ import SignOut from "../SıgnOut/SignOut";
 import SignedIn from "../SıgnedIn/SignedIn";
 import { useHistory } from "react-router";
 import JobPostButton from "../advertButton/JobPostButton";
+import { useSelector } from "react-redux";
+import FavoriteSummary from "../favoriteSummary/FavoriteSummary";
 export default function Navi() {
+
+  const {favoriteItems} = useSelector(state=>state.favorite)
+
   const [isAuthenticated, setIsAuthenticated] = useState(true)
 
   const history= useHistory()
@@ -34,7 +39,7 @@ function handleSıgnIn(){
           <Menu.Item name="Companies" />
           <Menu.Menu position="right">
      <JobPostButton/>
-
+{favoriteItems.length>0 && <FavoriteSummary/>}
           {isAuthenticated ? <SignedIn signOut={handleSignOut} />:<SignOut signIn={handleSıgnIn}/>}
            
           </Menu.Menu>

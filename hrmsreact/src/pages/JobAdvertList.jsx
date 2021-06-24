@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from "react";
 import JobAdvertService from "../services/jobAdvertService";
-import { Table, Header ,Button} from "semantic-ui-react";
+import { Table, Header ,Button, Rating} from "semantic-ui-react";
 import { Link } from "react-router-dom";
+import { addToFavorite } from "../store/actions/favoriteAction";
+import { toast } from "react-toastify";
+import { useDispatch } from "react-redux";
 export default function JobAdvertList() {
   
   const [jobAdverts, setJobAdverts] = useState([]);
+
+   const dispatch = useDispatch();
+
 
   useEffect(() => {
     let jobAdvertService = new JobAdvertService();
@@ -12,6 +18,13 @@ export default function JobAdvertList() {
       .getAllActiveTrueAndOpenTrueJobAdverts()
       .then((result) => setJobAdverts(result.data.data));
   });
+
+
+  const handleAddToFavorite =(jobAdvert)=>{
+    dispatch(addToFavorite(jobAdvert));
+    toast.success(`${jobAdvert.jobPosition.jobTitle} favorilere eklendi`)
+
+  }
 
   return (
     <div>
@@ -32,22 +45,24 @@ export default function JobAdvertList() {
 
             <Table.HeaderCell>İş Veren Şirket</Table.HeaderCell>
             <Table.HeaderCell></Table.HeaderCell>
+            <Table.HeaderCell></Table.HeaderCell>
           </Table.Row>
         </Table.Header>
 
         <Table.Body>
-          {jobAdverts.map((jobAdverts) => (
-            <Table.Row key={jobAdverts.id}>
-              <Table.Cell>{jobAdverts.jobPosition.jobTitle}</Table.Cell>
-              <Table.Cell>{jobAdverts.description}</Table.Cell>
-              <Table.Cell>{jobAdverts.city.name}</Table.Cell>
+          {jobAdverts.map((jobAdvert) => (
+            <Table.Row key={jobAdvert.id}>
+              <Table.Cell>{jobAdvert.jobPosition.jobTitle}</Table.Cell>
+              <Table.Cell>{jobAdvert.description}</Table.Cell>
+              <Table.Cell>{jobAdvert.city.name}</Table.Cell>
               <Table.Cell>
-                {jobAdverts.salaryMin}-{jobAdverts.salaryMax}
+                {jobAdvert.salaryMin}-{jobAdvert.salaryMax}
               </Table.Cell>
-              <Table.Cell>{jobAdverts.publishedAt}</Table.Cell>
+              <Table.Cell>{jobAdvert.publishedAt}</Table.Cell>
 
-              <Table.Cell>{jobAdverts.employer.companyName}</Table.Cell>
-              <Table.Cell> <Link to={`/jobadverts/${jobAdverts.id}`}><Button color='grey'>Details</Button></Link></Table.Cell>
+              <Table.Cell>{jobAdvert.employer.companyName}</Table.Cell>
+              <Table.Cell> <Link to={`/jobadverts/${jobAdvert.id}`}><Button color='grey'>Details</Button></Link></Table.Cell>
+              <Table.Cell><Rating onClick={()=>handleAddToFavorite(jobAdvert)} icon='heart' defaultRating={0} maxRating={1}  /></Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>

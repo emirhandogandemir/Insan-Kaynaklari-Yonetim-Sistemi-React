@@ -1,5 +1,7 @@
-import React from "react";
+import React,{useState} from "react";
 import "./Header.css";
+import CityFilter from "../cityFilter/CityFilter";
+import WorkTypeFilter from "../workTypeFilter/WorkTypeFilter"
 import { Grid, Header, Icon, Search, Segment, Image } from "semantic-ui-react";
 
 export default function Headerr() {
@@ -27,15 +29,15 @@ export default function Headerr() {
                 <p style={{color:"white"}}> Find City</p>  
               </Header>
 
-              <Search placeholder="Search cities..." />
+             <CityFilter/>
             </Grid.Column>
 
             <Grid.Column width={3}>
               <Header icon>
                 <Icon inverted color="black" name="search" />
-               <p style={{color:"white"}}>Find Job</p> 
+               <p style={{color:"white"}}>Find Work Type</p> 
               </Header>
-              <Search placeholder="Search job adverts..." />
+           <WorkTypeFilter/>
             </Grid.Column>
             <Grid.Column width={1}></Grid.Column>
           </Grid.Row>
