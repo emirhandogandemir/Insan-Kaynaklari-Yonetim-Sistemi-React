@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import JobAdvertService from "../services/jobAdvertService";
-import { Table, Header, Button, Rating } from "semantic-ui-react";
+import { Table, Header, Button, Rating ,Grid} from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { addToFavorite } from "../store/actions/favoriteAction";
 import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import CityFilter from "../layouts/cityFilter/CityFilter";
 import WorkTypeFilter from "../layouts/workTypeFilter/WorkTypeFilter";
+import { Pagination } from 'semantic-ui-react'
 export default function JobAdvertList() {
 
   const [jobAdverts, setJobAdverts] = useState([]);//default
@@ -17,12 +18,14 @@ export default function JobAdvertList() {
 
   const [selectedWorkType, setSelectedWorkType] = useState(null);
 
+  const [activePage, setActivePage] = useState(1);
+
   useEffect(() => {
     let jobAdvertService = new JobAdvertService();
     jobAdvertService
-      .getAllActiveTrueAndOpenTrueJobAdverts()
+      .getAllActiveTrueAndOpenTrueJobAdverts(activePage)
       .then((result) => setJobAdverts(result.data.data));
-  }, []);
+  },[activePage]);
 
   useEffect(() => {
     let filteredJobByJobAdverts;
@@ -53,10 +56,21 @@ export default function JobAdvertList() {
     toast.success(`${jobAdvert.jobPosition.jobTitle} favorilere eklendi`);
   };
 
+  const onChange=(e,pageInfo)=>{
+    setActivePage(pageInfo.activePage)
+   // console.log(pageInfo.activePage)
+   //console.log(pageInfo)
+  }
+
   return (
     <div>
-      <CityFilter onSelect={handleSelectCity} />
-      <WorkTypeFilter onSelect={handleSelectWorkType} />
+      <Grid>
+      <Grid.Row columns={3}>
+<Grid.Column > <CityFilter onSelect={handleSelectCity} /></Grid.Column>
+<Grid.Column> <WorkTypeFilter onSelect={handleSelectWorkType} /></Grid.Column>
+      </Grid.Row>
+     
+     
 
       <Header as="h2">
         Job Adverts
@@ -99,12 +113,7 @@ export default function JobAdvertList() {
                     </Link>
                   </Table.Cell>
                   <Table.Cell>
-                    <Rating
-                      onClick={() => handleAddToFavorite(jobAdvert)}
-                      icon="heart"
-                      defaultRating={0}
-                      maxRating={1}
-                    />
+                  
                   </Table.Cell>
                 </Table.Row>
               ))
@@ -126,20 +135,24 @@ export default function JobAdvertList() {
                     </Link>
                   </Table.Cell>
                   <Table.Cell>
-                    <Rating
+                     <Rating
                       onClick={() => handleAddToFavorite(jobAdvert)}
                       icon="heart"
                       defaultRating={0}
-                      maxRating={1}
-                    />
+                       maxRating={1}
+                    /> 
                   </Table.Cell>
                 </Table.Row>
               ))}
         </Table.Body>
-
-        <Table.Footer></Table.Footer>
+        <Pagination  activePage={activePage} onPageChange={onChange} totalPages={10} />
       </Table>
-    </div>
+
+   
+</Grid>
+
+      
+    </div> 
   );
 
   function handleSelectWorkType(workTypeId) {

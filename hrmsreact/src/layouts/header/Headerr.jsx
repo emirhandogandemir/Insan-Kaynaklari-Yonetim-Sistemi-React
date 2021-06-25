@@ -23,7 +23,7 @@ export default function Headerr() {
             <Grid.Column width={3}>
               <Header icon>
                 <Icon inverted color="black" name="world" />
-                <p style={{ color: "white" }}> Find City</p>
+               <p style={{ color: "white" }}> Find City</p>
               </Header>
             </Grid.Column>
 

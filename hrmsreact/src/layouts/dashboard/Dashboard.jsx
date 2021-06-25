@@ -47,7 +47,7 @@ export default function Dashboard() {
           
           </GridColumn>
           <GridColumn width={2}>
-            <div style={{ position: "fixed" ,marginLeft:"40px"}}>
+            <div style={{ position: "fixed" ,marginLeft:"50px"}}>
               <Link to="/"> 
                <Icon.Group size="huge">
                 <Icon loading color="blue" size="big" name="circle notch" />
