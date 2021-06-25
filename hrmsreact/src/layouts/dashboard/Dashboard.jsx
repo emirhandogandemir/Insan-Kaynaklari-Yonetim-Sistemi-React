@@ -4,7 +4,7 @@ import { Grid, GridColumn, GridRow, Icon } from "semantic-ui-react";
 import Home from "../homepage/Home";
 import SideBar from "../sidebar/SideBar";
 import JobAdvertList from "../../pages/JobAdvertList";
-import JobSeeker from "../../pages/JobSeekerList";
+import JobSeekerList from "../../pages/JobSeekerList";
 import { Route } from "react-router";
 import { Link } from "react-router-dom";
 import JobSeekerDetail from "../../pages/JobSeekerDetail";
@@ -16,6 +16,7 @@ import JobAdvertDetail from "../../pages/JobAdvertDetail";
 import EmployerDetail from "../../pages/EmployerDetail";
 
 import JobAdvertService from "../../services/jobAdvertService";
+import JobSeekerCv from "../../pages/JobSeekerCv";
 export default function Dashboard() {
 
 
@@ -31,7 +32,7 @@ export default function Dashboard() {
           <GridColumn width={11}>
          
             <Route exact path="/" component={Home} />
-            <Route exact path="/jobseekers" component={JobSeeker} />
+            <Route exact path="/jobseekers" component={JobSeekerList} />
             <Route path="/jobseekers/:id" component={JobSeekerDetail} />
             <Route exact path="/jobadverts" > <JobAdvertList> </JobAdvertList> </Route>
             <Route path="/jobadverts/:id" component={JobAdvertDetail}></Route>
@@ -39,7 +40,8 @@ export default function Dashboard() {
             <Route exact path="/employers" component={EmployerList} />
             <Route path="/employers/:id" component={EmployerDetail}/>
             <Route path="/jobadvertadd" component={JobAdvertAdd} />
-       
+            <Route path="/jobseekercv" component={JobSeekerCv}/>
+       <Route path="/adminjobadvertlist" component={AdminJobAdvertList}/>
             <Route
               path="/employerjobadvertlist" 
               component={EmployerJobAdvertList}

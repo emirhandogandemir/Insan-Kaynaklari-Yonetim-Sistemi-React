@@ -14,7 +14,7 @@ let jobSeekerService = new JobSeekerService();
 jobSeekerService.getById(id).then((result)=>setJobSeeker(result.data.data))
 
 },[])
-
+console.log(jobSeeker)
     return (
         <div>
             <Card.Group>

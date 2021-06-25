@@ -10,7 +10,7 @@ export default function JobSeeker() {
        let jobSeekerService= new JobSeekerService();
        jobSeekerService.getJobSeekers().then(result=>setJobSeekers(result.data.data))
    },[])
-   
+   console.log(jobSeekers)
     return (
         <div>
              <Header as="h2">
