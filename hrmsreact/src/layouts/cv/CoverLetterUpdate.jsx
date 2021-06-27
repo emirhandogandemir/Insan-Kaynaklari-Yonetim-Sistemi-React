@@ -18,8 +18,8 @@ export default function CoverLetterUpdate({coverLetter}) {
     console.log(coverLetter)
     const { values, errors, handleChange, handleSubmit, touched } = useFormik({
         initialValues: {
-          id: coverLetter?.id,
-          jobSeeker: coverLetter?.jobSeeker,
+          id:coverLetter?.id,
+          jobSeeker:coverLetter?.jobSeeker,
           content:coverLetter?.content
         },
         enableReinitialize:true,

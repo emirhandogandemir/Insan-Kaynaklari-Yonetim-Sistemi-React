@@ -31,7 +31,7 @@ export default function JobSeekerCv() {
         <div >
           <Card.Content>
             <Image floated="left" size="small" src={jobSeekerCv?.image.url} />
-
+  <ImageUpdate image={jobSeekerCv?.image}/>
             <div style={{ float: "left" }}>
                 <div style={{textAlign:"center"}}>
               <Card.Header>
