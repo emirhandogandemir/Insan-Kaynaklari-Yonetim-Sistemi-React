@@ -13,4 +13,8 @@ export default class JobSeekerService{
         return axios.get("http://localhost:8080/api/jobseekers/getByIdJobSeekerCv?jobSeekerId="+jobSeekerId)
     }
 
+    update(values){
+        return axios.post("http://localhost:8080/api/jobseekers/update",values)
+    }
+
 }
