@@ -8,7 +8,7 @@ export default function EducationDelete({id}) {
 //console.log(id)
     const deleteEducation = () => {
         let educationService = new EducationService();
-        console.log(id);
+        console.log("silindi");
         educationService.delete(id).then(toast.success("Eğitim bilgisi silindi!"));
     }
    

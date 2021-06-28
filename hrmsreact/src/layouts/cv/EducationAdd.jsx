@@ -22,7 +22,7 @@ console.log(jobSeeker)
                 schoolName: Yup.string().required("Okul adı boş bırakılamaz!"),
                 departmentName: Yup.string().required("Bölüm boş bırakılamaz!"),
                 startYear: Yup.number().required(" başlama yılı boş bırakılamaz"),
-                graduationYear: Yup.number().required("Mezun tarihi bos bırakılamaz!"),
+                
             }),
         onSubmit: values => {
             let educationService = new EducationService();

@@ -16,7 +16,7 @@ export default function SkillUpdate({skill}) {
     
     const [open, setOpen] = useState(false)
     
-    
+
     const { values, errors, handleChange, handleSubmit, touched } = useFormik({
         initialValues: {
           id: skill?.id,
@@ -24,13 +24,14 @@ export default function SkillUpdate({skill}) {
           name:skill?.name
           
         },
+        
         enableReinitialize:true,
         validationSchema: Yup.object({
             name: Yup.string().required(" adı boş bırakılamaz!"),
         }),
         onSubmit: (values) => {
           let skillService = new SkillService();
-          console.log(values);
+       
     
           skillService.update(values)
             .then(toast.success("Yetenek Bilgisi güncellendi!"));
