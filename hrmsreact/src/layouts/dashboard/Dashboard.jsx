@@ -14,6 +14,7 @@ import AdminJobAdvertList from "../../pages/Admin/JobAdverts/AdminJobAdvertList"
 import EmployerJobAdvertList from "../../pages/Employer/EmployerJobAdvertList";
 import JobAdvertDetail from "../../pages/JobAdvertDetail";
 import EmployerDetail from "../../pages/EmployerDetail";
+import EmployeeDetail from "../../pages/Employee/EmployeeDetail";
 
 import JobAdvertService from "../../services/jobAdvertService";
 import JobSeekerCv from "../../pages/JobSeekerCv";
@@ -41,6 +42,7 @@ export default function Dashboard() {
             <Route path="/employers/:id" component={EmployerDetail}/>
             <Route path="/jobadvertadd" component={JobAdvertAdd} />
             <Route path="/jobseekercv" component={JobSeekerCv}/>
+            <Route path="/employees" component ={EmployeeDetail}/>
        <Route path="/adminjobadvertlist" component={AdminJobAdvertList}/>
             <Route
               path="/employerjobadvertlist" 
