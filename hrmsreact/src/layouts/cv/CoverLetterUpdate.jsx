@@ -15,7 +15,7 @@ import CoverLetterService from '../../services/coverLetterService';
 export default function CoverLetterUpdate({coverLetter}) {
     const [open, setOpen] = useState(false)
     
-    console.log(coverLetter)
+    //console.log(coverLetter)
     const { values, errors, handleChange, handleSubmit, touched } = useFormik({
         initialValues: {
           id:coverLetter?.id,
@@ -28,7 +28,7 @@ export default function CoverLetterUpdate({coverLetter}) {
         }),
         onSubmit: (values) => {
           let coverLetterService = new CoverLetterService();
-          console.log(values);
+          //console.log(values);
     
           coverLetterService.update(values)
             .then(toast.success("Yetenek Bilgisi güncellendi!"));

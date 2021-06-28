@@ -34,7 +34,7 @@ export default function ExperienceUpdate({experience}) {
         }),
         onSubmit: (values) => {
           let experienceService = new ExperienceService();
-          console.log(experience)
+        //  console.log(experience)
           experienceService.update(values)
             .then(toast.success("Yetenek Bilgisi güncellendi!"));
         },

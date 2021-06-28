@@ -14,7 +14,7 @@ export default function EmployeeDetail() {
 
     return (
         <div>
-<div>
+<div style={{position:"relative",marginLeft:"500px"}}>
 <Image src={"../../../assets/avataremployee.jpg"} size='medium' />
         <Card
     header={employee?.firstName}

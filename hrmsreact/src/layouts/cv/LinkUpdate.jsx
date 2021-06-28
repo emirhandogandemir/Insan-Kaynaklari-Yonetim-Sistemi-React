@@ -31,7 +31,7 @@ export default function LinkUpdate({link}) {
         }),
         onSubmit: (values) => {
           let linkService = new LinkService();
-          console.log(link)
+//console.log(link)
           linkService.update(values)
             .then(toast.success("Yetenek Bilgisi güncellendi!"));
         },

@@ -37,7 +37,7 @@ export default function EducationUpdate({ education }) {
     }),
     onSubmit: (values) => {
       let educationService = new EducationService();
-      console.log(values);
+     // console.log(values);
 
       educationService
         .update(values)

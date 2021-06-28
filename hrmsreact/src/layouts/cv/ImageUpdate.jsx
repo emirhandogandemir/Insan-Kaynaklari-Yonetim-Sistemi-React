@@ -29,7 +29,7 @@ export default function ImageUpdate({image}) {
         }),
         onSubmit: (values) => {
           let imageService = new ImageService();
-          console.log("güncellendi");
+//console.log("güncellendi");
     
           imageService.update(values)
             .then(toast.success("Yetenek Bilgisi güncellendi!"));

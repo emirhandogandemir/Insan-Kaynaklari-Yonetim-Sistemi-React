@@ -21,17 +21,11 @@ export default function Headerr() {
               />
             </Grid.Column>
             <Grid.Column width={3}>
-              <Header icon>
-                <Icon inverted color="black" name="world" />
-               <p style={{ color: "white" }}> Find City</p>
-              </Header>
+             
             </Grid.Column>
 
             <Grid.Column width={3}>
-              <Header icon>
-                <Icon inverted color="black" name="search" />
-                <p style={{ color: "white" }}>Find Work Type</p>
-              </Header>
+            
             </Grid.Column>
             <Grid.Column width={1}></Grid.Column>
           </Grid.Row>

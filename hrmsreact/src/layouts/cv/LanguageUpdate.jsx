@@ -30,7 +30,7 @@ export default function LanguageUpdate({language}) {
         }),
         onSubmit: (values) => {
           let languageService = new LanguageService();
-          console.log(language)
+         // console.log(language)
           languageService.update(values)
             .then(toast.success("Yetenek Bilgisi güncellendi!"));
         },
