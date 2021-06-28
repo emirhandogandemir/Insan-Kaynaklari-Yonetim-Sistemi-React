@@ -27,7 +27,7 @@ export default function JobSeekerCv() {
 
   return (
     <div>
-      <Card fluid>
+      {/* <Card fluid>
         <div >
           <Card.Content>
             <Image floated="left" size="small" src={jobSeekerCv?.image.url} />
@@ -70,19 +70,56 @@ export default function JobSeekerCv() {
               </div>
             </div>
 
-            <Card.Content extra>
-              <div className="ui two buttons">
-                <Button basic color="green">
-                  Ekle
-                </Button>
-                <Button basic color="red">
-                  Güncelle
-                </Button>
-              </div>
-            </Card.Content>
+           
           </Card.Content>
         </div>
+      </Card> */}
+
+<div style={{height:"500px"}}>
+      <Card fluid>
+      <Card.Content>
+      <Image floated="left" size="small" src={jobSeekerCv?.image.url} />
+  <ImageUpdate image={jobSeekerCv?.image}/>
+            <div style={{ float: "left" }}/>
+                <div style={{textAlign:"center"}}/>
+
+      </Card.Content>
+<Card.Content> <div style={{height:"150px",textAlign:"left"}}> 
+Okul Adı : {jobSeekerCv?.educations.map((education)=>education.schoolName).join(",")}
+                <EducationAdd  jobSeeker={jobSeekerCv?.jobSeeker} />
+                <EducationUpdate  education={jobSeekerCv?.educations[0]} jobSeeker={jobSeekerCv?.jobSeeker}/>
+                <EducationDelete id={jobSeekerCv?.educations[0].id}/>
+                </div>
+</Card.Content>
+<Card.Content>
+Yetenekler :{" "}
+                {jobSeekerCv?.skills.map((skill) => skill.name).join(",")}
+                <SkillUpdate skill={jobSeekerCv?.skills} jobSeeker={jobSeekerCv?.jobSeeker}/>
+
+</Card.Content>
+<Card.Content>
+Bağlantı Adresleri : {jobSeekerCv?.links[0].name}:{" "}
+                {jobSeekerCv?.links[0].url}
+                <LinkUpdate link={jobSeekerCv?.links[0]}/>
+</Card.Content>
+<Card.Content> Diller : {jobSeekerCv?.languages[0].language}:{" "}
+                {jobSeekerCv?.languages[0].level}
+                <LanguageUpdate language={jobSeekerCv?.languages[0]}/></Card.Content>
+                <Card.Content>
+                Deneyim : İşyeri: {jobSeekerCv?.experiences[0].workplaceName} -
+                {jobSeekerCv?.experiences[0].position}
+                <ExperienceUpdate experience={jobSeekerCv?.experiences[0]}/>
+                </Card.Content>
+                <Card.Content>
+                Açıklama Mektubu {jobSeekerCv?.coverletters[0].content} 
+                <CoverLetterUpdate coverLetter={jobSeekerCv?.coverletters[0]}/>
+
+                </Card.Content>
       </Card>
+      </div>
+
+
+
     </div>
   );
 }

@@ -19,7 +19,7 @@ export default function Footer() {
         inverted
        
         vertical
-        style={{ marginBottom:"10em",marginTop:"10em", padding: "5em 0em" }}
+        style={{ marginBottom:"10em",marginTop:"35em", padding: "5em 0em" }}
       >
         <Container textAlign="center">
           <Grid divided inverted stackable>
