@@ -10,19 +10,25 @@ export default function EmployeeDetail() {
     useEffect(()=>{
         let employeeService = new EmployeeService();
         employeeService.getById(3).then((result)=>setEmployee(result.data.data))
-    })
+    },[])
 
     return (
-        <div style={{alignContent:"center"}}>
-
-<Image src={"../../../assets/avataremployee.jpg"} size='medium' circular />
+        <div>
+<div>
+<Image src={"../../../assets/avataremployee.jpg"} size='medium' />
         <Card
     header={employee?.firstName}
     meta={employee?.lastName}
     description={employee?.email}
  
   />
-<EmployeeUpdate employee={employee}/>
+  <div style={{float:"left"}}>
+  <EmployeeUpdate employee={employee}/>
+  </div>
+
+
+</div>
+
  
         </div>
     )
