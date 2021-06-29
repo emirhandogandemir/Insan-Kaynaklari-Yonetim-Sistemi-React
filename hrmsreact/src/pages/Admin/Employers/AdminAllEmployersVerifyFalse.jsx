@@ -4,11 +4,17 @@ import { Table,Button } from 'semantic-ui-react'
 export default function AdminAllEmployersVerifyFalse() {
    
    const [employers, setEmployers] = useState([])
-   
+   let employerService = new EmployerService();
    useEffect(()=>{
-       let employerService = new EmployerService();
+       
 employerService.getAllByVerify().then((result)=>setEmployers(result.data.data))
    },[])
+
+   let changeIsVerifiedStatus = (id)=>{
+     employerService.changeVerifiedStatus(id);
+     window.location.reload();
+   }
+
     return (
         <div>
             <Button fluid color="red">Onay Bekleyen</Button>
@@ -31,7 +37,7 @@ employerService.getAllByVerify().then((result)=>setEmployers(result.data.data))
     <Table.Cell>{employer.email}</Table.Cell>
     <Table.Cell>{employer.phoneNumber}</Table.Cell>
     <Table.Cell>{employer?.verified ?"Doğrulanmış" : "Doğrulanması gereken güncelleme "}</Table.Cell>
-    <Table.Cell> <Button fluid color="red">Onay Durumu değiştir</Button> </Table.Cell>
+    <Table.Cell> <Button onClick={()=> changeIsVerifiedStatus(employer.id)} fluid color="red">Onay Durumu değiştir</Button> </Table.Cell>
   </Table.Row>
 
 </Table.Body>

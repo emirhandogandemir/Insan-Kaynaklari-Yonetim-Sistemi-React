@@ -12,9 +12,14 @@ import {
 import * as Yup from "yup";
 import { toast } from "react-toastify";
 import EmployerService from "../../services/employerService";
+
 export default function ActiveEmployerUpdate({ employer }) {
   const [open, setOpen] = useState(false);
+
+  let employerService = new EmployerService();
+
   // console.log(employer);
+  //console.log(employer?.id)
   const { values, errors, handleChange, handleSubmit, touched } = useFormik({
     initialValues: {
       id: employer?.id,
@@ -34,13 +39,18 @@ export default function ActiveEmployerUpdate({ employer }) {
       website: Yup.string().required("website adı boş bırakılamaz"),
     }),
     onSubmit: (values) => {
-      let employerService = new EmployerService();
-
+     console.log("güncellendi")
+     //changeIsVerified(employer?.id)
       employerService
         .update(values)
-        .then(toast.success("Şirket Bilgileri Güncellendi!"));
+        .then(()=>{changeIsVerified(employer?.id);})
+        
     },
   });
+
+  let changeIsVerified= (id)=>{
+employerService.changeVerifiedStatus(id);
+  }
 
   return (
     <div>
