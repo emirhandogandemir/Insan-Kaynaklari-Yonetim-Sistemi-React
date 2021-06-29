@@ -23,6 +23,9 @@ export default function JobAdvertList() {
   const [pageSize, setPageSize] = useState(2)
 
   const dispatch = useDispatch();
+
+
+
   let jobAdvertService = new JobAdvertService();
   useEffect(() => {
    
@@ -54,6 +57,7 @@ export default function JobAdvertList() {
   }, [selectedCity, selectedWorkType]);
 
   const handleAddToFavorite = (jobAdvert) => {
+
     dispatch(addToFavorite(jobAdvert));
     toast.success("jobAdvert.jobPosition.jobTitle");
     console.log(jobAdvert.jobPosition.jobTitle);

@@ -5,7 +5,6 @@ import { Grid, Header, Icon, Search, Segment, Image } from "semantic-ui-react";
 
 export default function Headerr() {
   return (
-    <div>
       <Segment
         inverted
         placeholder
@@ -31,6 +30,5 @@ export default function Headerr() {
           </Grid.Row>
         </Grid>
       </Segment>
-    </div>
   );
 }

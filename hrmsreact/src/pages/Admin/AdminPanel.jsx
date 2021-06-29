@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom'
 export default function AdminPanel() {
     return (
         <div>
-
 <Grid columns="3">
 <Grid.Row>
-<Grid.Column>
+<Grid.Column >
     <Link to="/adminjobadvertlist">
+    
     <Card >
     <Image src={"../../../assets/jobadvert.jpg"} wrapped ui={false} />
     <Card.Content>
@@ -26,8 +26,8 @@ export default function AdminPanel() {
         22 Friends
       </a>
     </Card.Content>
-  </Card>
-    
+ </Card>
+
     </Link>
 
 
@@ -37,7 +37,7 @@ export default function AdminPanel() {
     <Link to="/adminemployer">
 
     <Card>
-    <Image src={"../../../assets/employer.jpg"} wrapped ui={false} />
+    <Image src={"../../../assets/employer.jpg"} wrapped ui={false} size="mini"/>
     <Card.Content>
       <Card.Header>Şirketleri</Card.Header>
       <Card.Meta>
@@ -54,8 +54,9 @@ export default function AdminPanel() {
       </a>
     </Card.Content>
   </Card>
-    </Link>
 
+    </Link>
+ 
 </Grid.Column>
 
 </Grid.Row>

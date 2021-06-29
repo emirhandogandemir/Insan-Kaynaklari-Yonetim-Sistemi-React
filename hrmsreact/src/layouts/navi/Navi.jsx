@@ -24,7 +24,7 @@ export default function Navi() {
     setIsAuthenticated(true);
   }
   return (
-    <div>
+
       <Menu inverted fixed="top" size="large">
         <Container>
           <Menu.Item name="building outline">
@@ -50,6 +50,5 @@ export default function Navi() {
           </Menu.Menu>
         </Container>
       </Menu>
-    </div>
   );
 }

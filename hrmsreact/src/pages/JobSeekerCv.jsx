@@ -26,8 +26,7 @@ export default function JobSeekerCv() {
   console.log(jobSeekerCv);
 
   return (
-    <div>
-      <div style={{ height: "500px" }}>
+      <div>
      
         <Card fluid>
           <Card.Content>
@@ -141,6 +140,6 @@ export default function JobSeekerCv() {
           ))}
         </Card>
       </div>
-    </div>
+ 
   );
 }

@@ -30,7 +30,4 @@ switch (type) {
         return state;
 }
 
-
-
-
 }

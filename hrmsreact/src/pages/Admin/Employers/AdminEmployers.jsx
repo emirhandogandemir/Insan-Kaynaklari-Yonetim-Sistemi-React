@@ -20,7 +20,6 @@ export default function AdminEmployers() {
     </Button.Group>
 
 </Grid.Row>
-<AdminAllEmployers></AdminAllEmployers>
 
                 
             </Grid>

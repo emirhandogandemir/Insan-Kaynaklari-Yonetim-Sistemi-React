@@ -14,12 +14,11 @@ import {
 import "./Footer.css";
 export default function Footer() {
   return (
-    <div >
       <Segment
         inverted
        
         vertical
-        style={{ marginBottom:"10em",marginTop:"50em", padding: "5em 0em" }}
+     
       >
         <Container textAlign="center">
           <Grid divided inverted stackable>
@@ -74,6 +73,5 @@ export default function Footer() {
           </List>
         </Container>
       </Segment>
-    </div>
   );
 }

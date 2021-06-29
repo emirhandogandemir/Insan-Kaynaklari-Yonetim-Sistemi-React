@@ -16,7 +16,7 @@ jobSeekerService.getById(id).then((result)=>setJobSeeker(result.data.data))
 },[])
 console.log(jobSeeker)
     return (
-        <div>
+       
             <Card.Group>
         <Card fluid>
           <Card.Content>
@@ -43,6 +43,5 @@ console.log(jobSeeker)
           </Card.Content>
         </Card>
       </Card.Group>
-        </div>
     )
 }
