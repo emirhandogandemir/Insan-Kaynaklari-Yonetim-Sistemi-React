@@ -26,4 +26,4 @@
 - React Router Kullanımı : [React Router](https://www.anatoliacode.com/blog/react-router-nedir-nasil-kullanilir)
 - React Router Kullanımı Baştan Sona : [React Router Kullanımı Baştan Sona](https://ysoftaoglu.com/post/redux-nedir-nasil-kullanilir/)
 - React Redux  :[Redux Nedir](https://devnot.com/2018/redux-nedir/)
-- React Redux  -Thunk :[](https://medium.com/kocsistem/zden-a-ya-redux-922e29d4e562)
+- React Redux  -Thunk :[thunk](https://medium.com/kocsistem/zden-a-ya-redux-922e29d4e562)
