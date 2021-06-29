@@ -15,7 +15,7 @@ import { toast } from "react-toastify";
 export default function EmployeeUpdate({employee}) {
     
     const [open, setOpen] = useState(false)
-     console.log(employee);
+    // console.log(employee);
      const { values, errors, handleChange, handleSubmit, touched } = useFormik({
         initialValues: {
           id:employee?.id,
@@ -34,7 +34,7 @@ export default function EmployeeUpdate({employee}) {
         }),
         onSubmit: (values) => {
           let employeeService = new EmployeeService();
-          console.log(employee)
+       //   console.log(employee)
           employeeService.update(values)
             .then(toast.success("Yetenek Bilgisi güncellendi!"));
         },

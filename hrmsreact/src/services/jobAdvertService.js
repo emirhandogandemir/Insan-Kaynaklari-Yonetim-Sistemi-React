@@ -17,8 +17,8 @@ export default class JobAdvertService {
 
   //--------------------
 
-  getAllActiveTrueAndOpenTrueJobAdverts(pageNo){
-    return axios.get("http://localhost:8080/api/jobadverts/getAllActiveAndOpenJobAdverts?pageNo="+pageNo)
+  getAllActiveTrueAndOpenTrueJobAdverts(pageNo,size){
+    return axios.get(`http://localhost:8080/api/jobadverts/getAllActiveAndOpenJobAdverts?pageNo=${pageNo}&size=${size}`)
   }
 
   getAllActiveFalseAndOpenTrueJobAdverts(){

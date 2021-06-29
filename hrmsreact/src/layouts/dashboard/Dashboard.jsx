@@ -18,13 +18,14 @@ import EmployeeDetail from "../../pages/Employee/EmployeeDetail";
 
 import JobAdvertService from "../../services/jobAdvertService";
 import JobSeekerCv from "../../pages/JobSeekerCv";
+import AdminPanel from "../../pages/Admin/AdminPanel";
+import ActiveEmployer from "../../pages/Employer/ActiveEmployer";
+import AdminEmployers from "../../pages/Admin/Employers/AdminEmployers";
 export default function Dashboard() {
 
 
-
-
   return (
-    <div>
+    <div >
       <Grid>
         <GridRow>
           <GridColumn width={3}>
@@ -43,12 +44,15 @@ export default function Dashboard() {
             <Route path="/jobadvertadd" component={JobAdvertAdd} />
             <Route path="/jobseekercv" component={JobSeekerCv}/>
             <Route path="/employees" component ={EmployeeDetail}/>
-       <Route path="/adminjobadvertlist" component={AdminJobAdvertList}/>
+       <Route exact path="/adminjobadvertlist" component={AdminJobAdvertList}/>
+            <Route path="/adminemployer" component ={AdminEmployers}/>
             <Route
               path="/employerjobadvertlist" 
               component={EmployerJobAdvertList}
+
           />
-          
+          <Route path="/adminpanel" component ={AdminPanel}/>
+          <Route path ="/activeemployer" component={ActiveEmployer}/>
           </GridColumn>
           <GridColumn width={2}>
             <div style={{ position: "fixed" ,marginLeft:"50px"}}>

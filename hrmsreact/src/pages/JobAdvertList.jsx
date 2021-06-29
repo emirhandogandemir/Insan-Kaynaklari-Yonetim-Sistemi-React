@@ -20,14 +20,16 @@ export default function JobAdvertList() {
 
   const [activePage, setActivePage] = useState(1);
 
-  const dispatch = useDispatch();
+  const [pageSize, setPageSize] = useState(2)
 
+  const dispatch = useDispatch();
+  let jobAdvertService = new JobAdvertService();
   useEffect(() => {
-    let jobAdvertService = new JobAdvertService();
+   
     jobAdvertService
-      .getAllActiveTrueAndOpenTrueJobAdverts(activePage)
+      .getAllActiveTrueAndOpenTrueJobAdverts(activePage,pageSize)
       .then((result) => setJobAdverts(result.data.data));
-  }, [activePage]);
+  }, [activePage,pageSize]);
 
   useEffect(() => {
     let filteredJobByJobAdverts;
@@ -62,6 +64,13 @@ export default function JobAdvertList() {
     // console.log(pageInfo.activePage)
     //console.log(pageInfo)
   };
+
+  let pageAble=(pageNo)=>{
+    
+    setPageSize(pageNo);
+      
+  }
+  
 
   return (
     <div>
@@ -153,13 +162,24 @@ export default function JobAdvertList() {
             onPageChange={onChange}
             totalPages={10}
           />
+          <p></p>
+             Bir sayfada kaç iş ilanı görmek istersiniz
+       <Button.Group>
+    <Button  onClick={()=>pageAble(10)}>10</Button>
+    <Button.Or />
+    <Button onClick={()=>pageAble(20)}>20</Button>
+    <Button.Or />
+    <Button>50</Button>
+    <Button.Or />
+    <Button>100</Button>
+  </Button.Group>
         </Table>
       </Grid>
     </div>
   );
 
   function handleSelectWorkType(workTypeId) {
-    setSelectedWorkType(workTypeId);
+     setSelectedWorkType(workTypeId);
   }
 
   function handleSelectCity(cityId) {

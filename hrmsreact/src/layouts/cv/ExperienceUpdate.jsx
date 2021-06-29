@@ -15,7 +15,7 @@ import ExperienceService from '../../services/experienceService';
 export default function ExperienceUpdate({experience}) {
     const [open, setOpen] = useState(false)
 
-    console.log(experience);
+    //console.log(experience);
     const { values, errors, handleChange, handleSubmit, touched } = useFormik({
         initialValues: {
           id:experience?.id,

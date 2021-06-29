@@ -15,7 +15,7 @@ import LanguageService from "../../services/languageService"
 export default function LanguageUpdate({language}) {
     const [open, setOpen] = useState(false)
 
-    console.log(language);
+    //console.log(language);
     const { values, errors, handleChange, handleSubmit, touched } = useFormik({
         initialValues: {
           id:language?.id,

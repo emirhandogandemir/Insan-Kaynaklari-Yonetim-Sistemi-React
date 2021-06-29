@@ -37,7 +37,7 @@ export default function Navi() {
             Hrms
           </Menu.Item>
           <Menu.Item name="Job Advert" />
-          <Menu.Item name="Companies" />
+          <Menu.Item as={NavLink} to="/activeemployer" name="Your Company" />
           <Menu.Item as={NavLink} to="/jobseekercv" name="Özgeçmişlerim" />
           <Menu.Menu position="right">
             <JobPostButton />

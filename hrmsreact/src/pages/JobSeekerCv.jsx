@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button, Card, Image, Grid, Segment } from "semantic-ui-react";
+import { Button, Card, Image, Grid, Segment ,Label} from "semantic-ui-react";
 import EducationDelete from "../layouts/cv/EducationDelete";
 import EducationUpdate from "../layouts/cv/EducationUpdate";
 import JobSeekerService from "../services/jobSeekerService";
@@ -28,12 +28,14 @@ export default function JobSeekerCv() {
   return (
     <div>
       <div style={{ height: "500px" }}>
+     
         <Card fluid>
           <Card.Content>
             <Image floated="left" size="small" src={jobSeekerCv?.image.url} />
             <div>
               <ImageUpdate image={jobSeekerCv?.image} />
             </div>
+            <Label ribbon >İş arayan Bilgisi</Label>
             <div style={{ float: "left" }} />
             <p>
               <b>Adı : {jobSeekerCv?.jobSeeker.firstName}</b>
@@ -47,7 +49,7 @@ export default function JobSeekerCv() {
           </Card.Content>
           <div style={{ backgroundColor: "skyblue", height: "30px" }}>
             {" "}
-            <Card.Header>Açıklama Mektubu</Card.Header>
+            <Label ribbon >Açıklama Mektubu</Label>
           </div>
           <Card.Content>
             Açıklama Mektubu {jobSeekerCv?.coverletters[0].content}
@@ -55,21 +57,29 @@ export default function JobSeekerCv() {
           </Card.Content>
           <div style={{ backgroundColor: "skyblue" }}>
             {" "}
-            <Card.Header>Deneyim Bilgisi</Card.Header>
+            <Label ribbon >Deneyim Bilgisi</Label>
           </div>
-          <Card.Content>
-            <b>
-              Deneyim : İşyeri: {jobSeekerCv?.experiences[0].workplaceName} -
-              {jobSeekerCv?.experiences[0].position}
-            </b>
-            <ExperienceUpdate experience={jobSeekerCv?.experiences[0]} />
-          </Card.Content>
+          {jobSeekerCv?.experiences.map((experience)=>(
+             <Card.Content>
+             <b>
+               Deneyim : İşyeri: {experience?.workplaceName} -
+               {experience?.position}
+             </b>
+             <ExperienceUpdate experience={experience} />
+           </Card.Content>
+          ))}
+         
           <div style={{ backgroundColor: "skyblue", height: "30px" }}>
             {" "}
-            <Card.Header>Okul Bilgileri</Card.Header>
+              
+            <Card.Header> <Label ribbon >Eğitim Bilgisi</Label> </Card.Header>
+             
+              
           </div>
           {jobSeekerCv?.educations.map((education) => (
+          
             <Card.Content>
+              
               {" "}
               <div style={{ fontSize: "15px" }}>
                 {/* <b>Okul Adı : {jobSeekerCv?.educations.map((education)=>education.schoolName).join(",")}</b>  */}
@@ -90,7 +100,7 @@ export default function JobSeekerCv() {
 
           <div style={{ backgroundColor: "skyblue", height: "30px" }}>
             {" "}
-            <Card.Header>Yetenek Bilgisi</Card.Header>
+            <Label ribbon >Yetenek Bilgisi</Label>
           </div>
           {jobSeekerCv?.skills.map((skill) => (
             <Card.Content>
@@ -106,7 +116,7 @@ export default function JobSeekerCv() {
 
           <div style={{ backgroundColor: "skyblue", height: "30px" }}>
             {" "}
-            <Card.Header>Bağlantı Adresleri</Card.Header>
+            <Label ribbon >Bağlantı Adresleri</Label>
           </div>
           {jobSeekerCv?.links.map((link) => (
             <Card.Content>
@@ -117,7 +127,7 @@ export default function JobSeekerCv() {
 
           <div style={{ backgroundColor: "skyblue", height: "30px" }}>
             {" "}
-            <Card.Header>Yabancı Dil Bilgisi</Card.Header>
+            <Label ribbon >Yabancı Dil Bilgisi</Label>
           </div>
           {jobSeekerCv?.languages.map((language) => (
             <Card.Content>
