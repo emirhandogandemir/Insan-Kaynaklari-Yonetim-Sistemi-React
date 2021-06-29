@@ -51,10 +51,13 @@ export default function JobSeekerCv() {
             {" "}
             <Label ribbon >Açıklama Mektubu</Label>
           </div>
-          <Card.Content>
-            Açıklama Mektubu {jobSeekerCv?.coverletters[0].content}
-            <CoverLetterUpdate coverLetter={jobSeekerCv?.coverletters[0]} />
+          {jobSeekerCv?.coverletters.map((coverLetter)=>(
+            <Card.Content>
+           {coverLetter?.content}
+            <CoverLetterUpdate coverLetter={coverLetter} />
           </Card.Content>
+          ))}
+          
           <div style={{ backgroundColor: "skyblue" }}>
             {" "}
             <Label ribbon >Deneyim Bilgisi</Label>
