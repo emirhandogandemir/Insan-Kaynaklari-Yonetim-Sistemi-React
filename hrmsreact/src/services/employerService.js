@@ -16,4 +16,12 @@ export default class EmployerService {
 return axios.post("http://localhost:8080/api/employers/update",values)
 
   }
+
+  getAllByVerify(){
+    return axios.get("http://localhost:8080/api/employers/getallbyverify")
+  }
+
+  changeVerifiedStatus(id){
+    return axios.post("http://localhost:8080/api/employers/changeverifiedstatus?id="+id);
+  }
 }
