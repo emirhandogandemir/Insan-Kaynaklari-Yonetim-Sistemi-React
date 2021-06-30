@@ -3,6 +3,7 @@ import { useFormik } from 'formik'
 import { Button, Form, Grid, GridColumn, Label, Modal, Icon } from 'semantic-ui-react'
 import *as Yup from "yup"
 import { toast } from 'react-toastify';
+import swal from "sweetalert";
 import EducationService from "../../services/educationService"
 export default function EducationAdd({jobSeeker}) {
     
@@ -27,7 +28,7 @@ console.log(jobSeeker)
         onSubmit: values => {
             let educationService = new EducationService();
             console.log("eklendi")
-            educationService.add(values).then(toast.success("Eğitim eklendi"));
+            educationService.add(values).then(swal(`${values.schoolName}`,"Eklendi", "success"));
         }
     });
 
