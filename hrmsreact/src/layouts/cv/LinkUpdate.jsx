@@ -33,7 +33,8 @@ export default function LinkUpdate({link}) {
           let linkService = new LinkService();
 //console.log(link)
           linkService.update(values)
-            .then(toast.success("Yetenek Bilgisi güncellendi!"));
+            .then( swal(`${values.name}`,"Update Edildi", "success"));
+            window.location.reload();
         },
       });
     
