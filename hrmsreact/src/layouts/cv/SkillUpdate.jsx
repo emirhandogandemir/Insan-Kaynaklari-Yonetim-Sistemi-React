@@ -11,6 +11,7 @@ import {
   Icon,
 } from "semantic-ui-react";
 import * as Yup from "yup";
+import swal from "sweetalert";
 import { toast } from "react-toastify";
 export default function SkillUpdate({skill}) {
     
@@ -34,10 +35,11 @@ export default function SkillUpdate({skill}) {
        
     
           skillService.update(values)
-            .then(toast.success("Yetenek Bilgisi güncellendi!"));
+            .then( swal(`${values.name}`,"Update Edildi", "success"));
+            window.location.reload();
         },
       });
-    
+   
       return (
         <div>
           <Modal
