@@ -11,6 +11,7 @@ import {
 } from "semantic-ui-react";
 import * as Yup from "yup";
 import { toast } from "react-toastify";
+import swal from "sweetalert";
 import CoverLetterService from '../../services/coverLetterService';
 export default function CoverLetterUpdate({coverLetter}) {
     const [open, setOpen] = useState(false)
@@ -31,7 +32,7 @@ export default function CoverLetterUpdate({coverLetter}) {
           //console.log(values);
     
           coverLetterService.update(values)
-            .then(toast.success("Yetenek Bilgisi güncellendi!"));
+            .then( swal(`${values.content}`,"Update Edildi", "success"));
         },
       });
     
