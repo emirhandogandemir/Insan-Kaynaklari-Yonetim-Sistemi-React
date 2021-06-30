@@ -1,5 +1,5 @@
 import React ,{useState,useEffect}from 'react'
-import { Segment,Grid,Header,Image,Button,Statistic} from 'semantic-ui-react'
+import { Segment,Grid,Header,Image,Button,Statistic,Icon} from 'semantic-ui-react'
 import EmployerService from '../../services/employerService'
 import JobAdvertService from '../../services/jobAdvertService'
 import JobPositionService from '../../services/jobPositionService'
@@ -53,20 +53,7 @@ jobPositionService.countGetAll().then((result)=>setJobPositions(result.data))
             <Button inverted color="red" >Check Them Out</Button>
           </Grid.Column>
         </Grid.Row>
-        <div style={{textAlign:"center"}}>
-        <Statistic color="blue">
-    <Statistic.Value>{jobAdvertCount}</Statistic.Value>
-    <Statistic.Label>Job Adverts</Statistic.Label>
-  </Statistic>
-  <Statistic color="red">
-    <Statistic.Value>{employerCount}</Statistic.Value>
-    <Statistic.Label>Companies</Statistic.Label>
-  </Statistic>
-  <Statistic>
-    <Statistic.Value>{jobPositions}</Statistic.Value>
-    <Statistic.Label>Job Positions</Statistic.Label>
-  </Statistic>
-        </div>
+   
         
       </Grid>
     </Segment>
@@ -87,6 +74,7 @@ jobPositionService.countGetAll().then((result)=>setJobPositions(result.data))
             <p style={{ fontSize: '1.33em' }}>
               <Image avatar src={"../../../assets/admin.jpeg"}  />
            <div style={{textShadow:"#555 5px 5px 5px"}}> <b>DOGANDEMİR</b> Chief Of Project</div>  
+           <Icon name='phone' /> 05541393831
             </p>
           
           </Grid.Column>
@@ -95,6 +83,26 @@ jobPositionService.countGetAll().then((result)=>setJobPositions(result.data))
       <hr />
     </Segment>
     </div>
+    <div style={{marginTop:"30px"}}>
+        <Statistic color="blue">
+    <Statistic.Value>  <Icon name='suitcase' />{jobAdvertCount-1}+</Statistic.Value>
+    <Statistic.Label>Job Adverts</Statistic.Label>
+  </Statistic>
+  <Statistic color="red">
+    <Statistic.Value> 
+      <Icon name='building' />
+    
+    {employerCount-1}+</Statistic.Value>
+    <Statistic.Label>Companies</Statistic.Label>
+  </Statistic>
+  <Statistic>
+    <Statistic.Value>
+      <Icon name='briefcase' />
+     
+   {jobPositions-1}+</Statistic.Value>
+    <Statistic.Label>Job Positions</Statistic.Label>
+  </Statistic>
+        </div>
         </div>
  
     )

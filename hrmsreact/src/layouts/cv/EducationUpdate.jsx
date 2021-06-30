@@ -11,6 +11,7 @@ import {
 } from "semantic-ui-react";
 import * as Yup from "yup";
 import { toast } from "react-toastify";
+import swal from "sweetalert";
 import EducationService from "../../services/educationService";
 export default function EducationUpdate({ education }) {
 
@@ -41,8 +42,8 @@ export default function EducationUpdate({ education }) {
      // console.log(values);
 
       educationService
-        .update(values)
-        .then(toast.success("Eğitim bilgisi güncellendi!"));
+        .update(values).then(swal(`${values.schoolName}`,"Update Edildi", "success"))
+        window.location.reload();
     },
   });
 
