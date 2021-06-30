@@ -19,6 +19,7 @@ export default function EducationUpdate({ education }) {
 
 //  console.log(education)
 
+
   const { values, errors, handleChange, handleSubmit, touched } = useFormik({
     initialValues: {
       id: education?.id,
