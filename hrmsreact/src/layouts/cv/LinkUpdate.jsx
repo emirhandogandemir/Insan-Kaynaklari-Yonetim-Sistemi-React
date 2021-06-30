@@ -12,6 +12,7 @@ import {
 import * as Yup from "yup";
 import { toast } from "react-toastify";
 import LinkService from '../../services/linkService';
+import swal from "sweetalert";
 export default function LinkUpdate({link}) {
     
     const [open, setOpen] = useState(false)

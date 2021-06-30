@@ -11,6 +11,7 @@ import {
 } from "semantic-ui-react";
 import * as Yup from "yup";
 import { toast } from "react-toastify";
+import swal from "sweetalert";
 import LanguageService from "../../services/languageService"
 export default function LanguageUpdate({language}) {
     const [open, setOpen] = useState(false)
@@ -32,7 +33,8 @@ export default function LanguageUpdate({language}) {
           let languageService = new LanguageService();
          // console.log(language)
           languageService.update(values)
-            .then(toast.success("Yetenek Bilgisi güncellendi!"));
+            .then( swal(`${values.language}`,"Update Edildi", "success"));
+            window.location.reload();
         },
       });
     
