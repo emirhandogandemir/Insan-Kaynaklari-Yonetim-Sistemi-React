@@ -1,15 +1,20 @@
 import React, { useEffect, useState } from "react";
 import JobPositionService from "../services/jobPositionService";
+import JobAdvertService from "../services/jobAdvertService";
 import {  Table, Header ,Button,Grid,Card,Icon,Image} from "semantic-ui-react";
 export default function JobPositionList() {
   const [jobPositions, setJobPositions] = useState([]);
-
+  let jobAdvertService = new JobAdvertService() 
   useEffect(() => {
     let jobPositionService = new JobPositionService();
     jobPositionService
       .getJobPositions()
       .then((result) => setJobPositions(result.data.data));
   },[]);
+
+  const countGetById= (id)=>{
+jobAdvertService.countByJobPositionId(id);
+  }
 
   return (
     <div>
@@ -41,20 +46,23 @@ export default function JobPositionList() {
 
 
 <Grid >
-        <Grid.Row columns="3">
+        <Grid.Row centered columns="3">
 
       {jobPositions.map((jobPosition)=>(
      
 <Grid.Column>
 <Card>
-    <Image src='/images/avatar/large/matthew.png' wrapped ui={false} />
+    <Image src={"../../assets/devops.jpg"} wrapped ui={false} />
     <Card.Content>
       <Card.Header>{jobPosition.jobTitle}</Card.Header>
       <Card.Meta>
         <span className='date'>Joined in 2015</span>
       </Card.Meta>
       <Card.Description>
-        Matthew is a musician living in Nashville.
+       şu anda bu Pozisyonda olan iş sayısı : 
+      </Card.Description>
+      <Card.Description>
+       iş ilanının sisteme eklenme tarihi : {jobPosition.createdDate}
       </Card.Description>
     </Card.Content>
     <Card.Content extra>

@@ -25,4 +25,7 @@ export default class EmployerService {
       "http://localhost:8080/api/employers/changeverifiedstatus?id=" + id
     );
   }
+  countGetAll(){
+    return axios.get("http://localhost:8080/api/employers/countGetAll")
+  }
 }

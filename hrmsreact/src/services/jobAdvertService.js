@@ -70,7 +70,9 @@ return axios.get("http://localhost:8080/api/jobadverts/getAllByWorkTypeId?workTy
    return axios.get("http://localhost:8080/api/jobadverts/countByJobPositionId?jobPositionId="+jobPositionId)
  }
 
-
+countGetAll(){
+  return axios.get("http://localhost:8080/api/jobadverts/countGetAll")
+}
 
 
 
