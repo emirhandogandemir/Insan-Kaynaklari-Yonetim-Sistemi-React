@@ -12,6 +12,7 @@ import {
 } from "semantic-ui-react";
 import * as Yup from "yup";
 import { toast } from "react-toastify";
+import swal from "sweetalert";
 export default function ImageUpdate({image}) {
     const [open, setOpen] = useState(false)
     
@@ -32,7 +33,7 @@ export default function ImageUpdate({image}) {
 //console.log("güncellendi");
     
           imageService.update(values)
-            .then(toast.success("Yetenek Bilgisi güncellendi!"));
+            .then( swal("image","Update Edildi", "success"));
         },
       });
     
