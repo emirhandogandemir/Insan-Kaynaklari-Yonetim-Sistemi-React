@@ -11,6 +11,7 @@ import {
 } from "semantic-ui-react";
 import * as Yup from "yup";
 import { toast } from "react-toastify";
+import swal from "sweetalert";
 import ExperienceService from '../../services/experienceService';
 export default function ExperienceUpdate({experience}) {
     const [open, setOpen] = useState(false)
@@ -36,7 +37,7 @@ export default function ExperienceUpdate({experience}) {
           let experienceService = new ExperienceService();
         //  console.log(experience)
           experienceService.update(values)
-            .then(toast.success("Yetenek Bilgisi güncellendi!"));
+            .then( swal(`${values.workplaceName}`,"Update Edildi", "success"));
         },
       });
     
