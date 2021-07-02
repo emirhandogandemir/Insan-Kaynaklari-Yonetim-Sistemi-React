@@ -11,7 +11,9 @@ import {
 } from "semantic-ui-react";
 import * as Yup from "yup";
 import { toast } from "react-toastify";
+import swal from "sweetalert";
 import EmployerService from "../../services/employerService";
+import VerificationEmployerService from "../../services/verificationEmployerService";
 
 export default function ActiveEmployerUpdate({ employer }) {
   const [open, setOpen] = useState(false);
@@ -30,7 +32,7 @@ export default function ActiveEmployerUpdate({ employer }) {
       phoneNumber: employer?.phoneNumber,
       active: true,
       deleted: false,
-      verified: true,
+      verified: false,
     },
     enableReinitialize: true,
     validationSchema: Yup.object({
@@ -41,10 +43,25 @@ export default function ActiveEmployerUpdate({ employer }) {
     onSubmit: (values) => {
      console.log("güncellendi")
      //changeIsVerified(employer?.id)
-      employerService
-        .update(values)
-        .then(()=>{changeIsVerified(employer?.id);})
-        
+      //employerService
+       // .update(values)
+        //.then(()=>{changeIsVerified(employer?.id);})
+        values.id=20;
+        values.verified=false;
+       // values.verified=false;// verify buradan değiştirip false olur
+        let verificationEmployerService = new VerificationEmployerService();
+        let verificationEmployer={
+          companyName:values.companyName,
+          id:values.id,
+          email:values.email,
+          website:values.website,
+          phoneNumber:values.phoneNumber,
+          password:values.password,
+          verified:false,
+          deleted:false,
+          active:true
+        }
+        verificationEmployerService.add(verificationEmployer).then(swal("Başarılı","Kayıt alındı bilgileriniz personellerimiz tarafından onaylandığında güncellenecektir","success"))
     },
   });
 
