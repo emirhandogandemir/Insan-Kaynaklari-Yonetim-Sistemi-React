@@ -16,7 +16,7 @@ import JobAdvertDetail from "../../pages/JobAdvertDetail";
 import EmployerDetail from "../../pages/EmployerDetail";
 import EmployeeDetail from "../../pages/Employee/EmployeeDetail";
 import AdminAllEmployersVerifyFalse from "../../pages/Admin/Employers/AdminAllEmployersVerifyFalse";
-
+import favoriteAction from "../../store/actions/favoriteAction"
 import JobAdvertService from "../../services/jobAdvertService";
 import JobSeekerCv from "../../pages/JobSeekerCv";
 import AdminPanel from "../../pages/Admin/AdminPanel";

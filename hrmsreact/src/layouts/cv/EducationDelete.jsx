@@ -5,10 +5,10 @@ import EducationService from "../../services/educationService"
 export default function EducationDelete({id}) {
    
     const [open, setOpen] = useState(false)
-//console.log(id)
-    const deleteEducation = () => {
+
+    const deleteEducation = (id) => {
         let educationService = new EducationService();
-        console.log("silindi");
+        console.log(id)
         educationService.delete(id).then(toast.success("Eğitim bilgisi silindi!"));
     }
    
@@ -37,7 +37,7 @@ export default function EducationDelete({id}) {
                         labelPosition='right'
                         icon='checkmark'
                         onClick={() => setOpen(false)}
-                        onClick={() => deleteEducation()}
+                        onClick={() => deleteEducation(id)}
                         positive
                     />
                 </Modal.Actions>

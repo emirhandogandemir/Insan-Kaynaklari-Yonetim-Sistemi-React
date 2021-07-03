@@ -3,11 +3,11 @@ import JobAdvertService from "../services/jobAdvertService";
 import { Table, Header, Button, Rating, Grid } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { addToFavorite } from "../store/actions/favoriteAction";
-import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import CityFilter from "../layouts/cityFilter/CityFilter";
 import WorkTypeFilter from "../layouts/workTypeFilter/WorkTypeFilter";
 import { Pagination } from "semantic-ui-react";
+import Favorite from "../layouts/favorite/Favorite";
 import "react-toastify/dist/ReactToastify.min.css";
 export default function JobAdvertList() {
   const [jobAdverts, setJobAdverts] = useState([]); //default
@@ -59,7 +59,7 @@ export default function JobAdvertList() {
   const handleAddToFavorite = (jobAdvert) => {
 
     dispatch(addToFavorite(jobAdvert));
-    toast.success("jobAdvert.jobPosition.jobTitle");
+    //toast.success("jobAdvert.jobPosition.jobTitle");
     console.log(jobAdvert.jobPosition.jobTitle);
   };
 
@@ -130,7 +130,7 @@ export default function JobAdvertList() {
                         <Button color="grey">Details</Button>
                       </Link>
                     </Table.Cell>
-                    <Table.Cell></Table.Cell>
+                    <Table.Cell> <Favorite jobAdvert={jobAdvert}/></Table.Cell>
                   </Table.Row>
                 ))
               : jobAdverts.map((jobAdvert) => (
@@ -150,13 +150,8 @@ export default function JobAdvertList() {
                         <Button color="grey">Details</Button>
                       </Link>
                     </Table.Cell>
-                    <Table.Cell>
-                      <Rating
-                        onClick={() => handleAddToFavorite(jobAdvert)}
-                        icon="heart"
-                        defaultRating={0}
-                        maxRating={1}
-                      />
+                    <Table.Cell> 
+                    <Favorite jobAdvert={jobAdvert}/>
                     </Table.Cell>
                   </Table.Row>
                 ))}

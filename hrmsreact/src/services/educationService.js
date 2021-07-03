@@ -10,7 +10,7 @@ export default class SchoolService {
   }
 
   delete(id){
-      return axios.delete("http://localhost:8080/api/educations/delete?id="+id)
+      return axios.post("http://localhost:8080/api/educations/delete?id="+id)
   }
   add(values){
       return axios.post("http://localhost:8080/api/educations/add",values)

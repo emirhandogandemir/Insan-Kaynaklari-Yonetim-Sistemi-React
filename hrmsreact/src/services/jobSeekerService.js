@@ -17,4 +17,8 @@ export default class JobSeekerService{
         return axios.post("http://localhost:8080/api/jobseekers/update",values)
     }
 
+    add(values){
+        return axios.post("http://localhost:8080/api/jobseekers/add",values)
+    }
+
 }
