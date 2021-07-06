@@ -13,7 +13,7 @@ import * as Yup from "yup";
 import { toast } from "react-toastify";
 import swal from "sweetalert";
 import EducationService from "../../services/educationService";
-export default function EducationUpdate({ education }) {
+export default function EducationUpdate({ education ,onSuccess}) {
 
 
   const [open, setOpen] = useState(false);
@@ -43,7 +43,7 @@ export default function EducationUpdate({ education }) {
 
       educationService
         .update(values).then(swal(`${values.schoolName}`,"Update Edildi", "success"))
-       
+       onSuccess(values)
     },
   });
 

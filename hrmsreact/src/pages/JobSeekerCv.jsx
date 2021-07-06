@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button, Card, Image, Grid, Segment ,Label} from "semantic-ui-react";
+import { Button, Card, Image, Grid, Segment, Label } from "semantic-ui-react";
 import EducationDelete from "../layouts/cv/EducationDelete";
 import EducationUpdate from "../layouts/cv/EducationUpdate";
 import JobSeekerService from "../services/jobSeekerService";
@@ -22,124 +22,127 @@ export default function JobSeekerCv() {
     jobSeekerService
       .getByIdJobSeekerCv(1)
       .then((result) => setJobSeekerCvs(result.data.data));
-  }, [jobSeekerCv]);
+  }, []);
   console.log(jobSeekerCv);
 
   return (
-      <div>
-     
-        <Card fluid>
-          <Card.Content>
-            <Image floated="left" size="small" src={jobSeekerCv?.image.url} />
-            <div>
-              <ImageUpdate image={jobSeekerCv?.image} />
-            </div>
-            <Label ribbon >İş arayan Bilgisi</Label>
-            <div style={{ float: "left" }} />
-            <p>
-              <b>Adı : {jobSeekerCv?.jobSeeker.firstName}</b>
-            </p>
-            <p>
-              <b>Soyad : {jobSeekerCv?.jobSeeker.lastName}</b>
-            </p>
-            <p>
-              <b>Email : {jobSeekerCv?.jobSeeker.email} </b>{" "}
-            </p>
-          </Card.Content>
-          <div style={{ backgroundColor: "skyblue", height: "30px" }}>
-            {" "}
-            <Label ribbon >Açıklama Mektubu</Label>
+    <div>
+      <Card fluid>
+        <Card.Content>
+          <Image floated="left" size="small" src={jobSeekerCv?.image.url} />
+          <div>
+            <ImageUpdate image={jobSeekerCv?.image} />
           </div>
-          {jobSeekerCv?.coverletters.map((coverLetter)=>(
-            <Card.Content>
-           {coverLetter?.content}
+          <Label ribbon>İş arayan Bilgisi</Label>
+          <div style={{ float: "left" }} />
+          <p>
+            <b>Adı : {jobSeekerCv?.jobSeeker.firstName}</b>
+          </p>
+          <p>
+            <b>Soyad : {jobSeekerCv?.jobSeeker.lastName}</b>
+          </p>
+          <p>
+            <b>Email : {jobSeekerCv?.jobSeeker.email} </b>{" "}
+          </p>
+        </Card.Content>
+        <div style={{ backgroundColor: "skyblue", height: "30px" }}>
+          {" "}
+          <Label ribbon>Açıklama Mektubu</Label>
+        </div>
+        {jobSeekerCv?.coverletters.map((coverLetter) => (
+          <Card.Content>
+            {coverLetter?.content}
             <CoverLetterUpdate coverLetter={coverLetter} />
           </Card.Content>
-          ))}
-          
-          <div style={{ backgroundColor: "skyblue" }}>
-            {" "}
-            <Label ribbon >Deneyim Bilgisi</Label>
-          </div>
-          {jobSeekerCv?.experiences.map((experience)=>(
-             <Card.Content>
-             <b>
-               Deneyim : İşyeri: {experience?.workplaceName} -
-               {experience?.position}
-             </b>
-             <ExperienceUpdate experience={experience} />
-           </Card.Content>
-          ))}
-         
-          <div style={{ backgroundColor: "skyblue", height: "30px" }}>
-            {" "}
-              
-            <Card.Header> <Label ribbon >Eğitim Bilgisi</Label> </Card.Header>
-             
-              
-          </div>
-          {jobSeekerCv?.educations.map((education) => (
-          
-            <Card.Content>
-              
-              {" "}
-              <div style={{ fontSize: "15px" }}>
-                {/* <b>Okul Adı : {jobSeekerCv?.educations.map((education)=>education.schoolName).join(",")}</b>  */}
-                {education.schoolName}
+        ))}
 
-                <EducationUpdate
-                  education={education}
-                  jobSeeker={jobSeekerCv?.jobSeeker}
-                />
-                <EducationDelete id={education.id} />
-              </div>
-            </Card.Content>
-          ))}
+        <div style={{ backgroundColor: "skyblue" }}>
+          {" "}
+          <Label ribbon>Deneyim Bilgisi</Label>
+        </div>
+        {jobSeekerCv?.experiences.map((experience) => (
+          <Card.Content>
+            <b>
+              Deneyim : İşyeri: {experience?.workplaceName} -
+              {experience?.position}
+            </b>
+            <ExperienceUpdate experience={experience} />
+          </Card.Content>
+        ))}
+
+        <div style={{ backgroundColor: "skyblue", height: "30px" }}>
+          {" "}
+          <Card.Header>
+            {" "}
+            <Label ribbon>Eğitim Bilgisi</Label>{" "}
+          </Card.Header>
+        </div>
+        {jobSeekerCv?.educations.map((education) => (
           <Card.Content>
             {" "}
-            <EducationAdd jobSeeker={jobSeekerCv?.jobSeeker} />
-          </Card.Content>
+            <div style={{ fontSize: "15px" }}>
+              {/* <b>Okul Adı : {jobSeekerCv?.educations.map((education)=>education.schoolName).join(",")}</b>  */}
+              {education.schoolName}
 
-          <div style={{ backgroundColor: "skyblue", height: "30px" }}>
-            {" "}
-            <Label ribbon >Yetenek Bilgisi</Label>
-          </div>
-          {jobSeekerCv?.skills.map((skill) => (
-            <Card.Content>
-              Yetenekler :{" "}
-              {/* {jobSeekerCv?.skills.map((skill) => skill.name).join(",")} */}
-              {skill.name}
-              <SkillUpdate
-                skill={skill}
+              <EducationUpdate
+                education={education}
+                onSuccess={handleEducationUpdateSuccess}
                 jobSeeker={jobSeekerCv?.jobSeeker}
               />
-            </Card.Content>
-          ))}
+              <EducationDelete id={education.id} />
+            </div>
+          </Card.Content>
+        ))}
+        <Card.Content>
+          {" "}
+          <EducationAdd jobSeeker={jobSeekerCv?.jobSeeker} />
+        </Card.Content>
 
-          <div style={{ backgroundColor: "skyblue", height: "30px" }}>
-            {" "}
-            <Label ribbon >Bağlantı Adresleri</Label>
-          </div>
-          {jobSeekerCv?.links.map((link) => (
-            <Card.Content>
-              Bağlantı Adresleri : {link.name}: {link.url}
-              <LinkUpdate link={link} />
-            </Card.Content>
-          ))}
+        <div style={{ backgroundColor: "skyblue", height: "30px" }}>
+          {" "}
+          <Label ribbon>Yetenek Bilgisi</Label>
+        </div>
+        {jobSeekerCv?.skills.map((skill) => (
+          <Card.Content>
+            Yetenekler :{" "}
+            {/* {jobSeekerCv?.skills.map((skill) => skill.name).join(",")} */}
+            {skill.name}
+            <SkillUpdate skill={skill} jobSeeker={jobSeekerCv?.jobSeeker} />
+          </Card.Content>
+        ))}
 
-          <div style={{ backgroundColor: "skyblue", height: "30px" }}>
+        <div style={{ backgroundColor: "skyblue", height: "30px" }}>
+          {" "}
+          <Label ribbon>Bağlantı Adresleri</Label>
+        </div>
+        {jobSeekerCv?.links.map((link) => (
+          <Card.Content>
+            Bağlantı Adresleri : {link.name}: {link.url}
+            <LinkUpdate link={link} />
+          </Card.Content>
+        ))}
+
+        <div style={{ backgroundColor: "skyblue", height: "30px" }}>
+          {" "}
+          <Label ribbon>Yabancı Dil Bilgisi</Label>
+        </div>
+        {jobSeekerCv?.languages.map((language) => (
+          <Card.Content>
             {" "}
-            <Label ribbon >Yabancı Dil Bilgisi</Label>
-          </div>
-          {jobSeekerCv?.languages.map((language) => (
-            <Card.Content>
-              {" "}
-              Diller : {language.language}: {language.level}
-              <LanguageUpdate language={language} />
-            </Card.Content>
-          ))}
-        </Card>
-      </div>
- 
+            Diller : {language.language}: {language.level}
+            <LanguageUpdate language={language} />
+          </Card.Content>
+        ))}
+      </Card>
+    </div>
   );
+
+  function handleEducationUpdateSuccess(updatedEducation) {
+    const newEducations = [...jobSeekerCv.educations];
+    const targetIndex = jobSeekerCv.educations.findIndex(
+      (education) => education.id === updatedEducation.id
+    );
+    newEducations.splice(targetIndex, 1, updatedEducation);
+    setJobSeekerCvs({ ...jobSeekerCv, educations: newEducations });
+  }
 }
