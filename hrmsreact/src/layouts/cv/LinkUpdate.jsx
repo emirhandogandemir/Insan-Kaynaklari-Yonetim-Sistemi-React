@@ -35,7 +35,7 @@ export default function LinkUpdate({link}) {
 //console.log(link)
           linkService.update(values)
             .then( swal(`${values.name}`,"Update Edildi", "success"));
-            window.location.reload();
+           
         },
       });
     

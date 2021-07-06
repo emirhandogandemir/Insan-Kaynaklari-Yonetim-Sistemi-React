@@ -43,7 +43,7 @@ export default function EducationUpdate({ education }) {
 
       educationService
         .update(values).then(swal(`${values.schoolName}`,"Update Edildi", "success"))
-        window.location.reload();
+       
     },
   });
 

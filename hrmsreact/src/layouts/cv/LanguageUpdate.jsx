@@ -34,7 +34,7 @@ export default function LanguageUpdate({language}) {
          // console.log(language)
           languageService.update(values)
             .then( swal(`${values.language}`,"Update Edildi", "success"));
-            window.location.reload();
+        
         },
       });
     

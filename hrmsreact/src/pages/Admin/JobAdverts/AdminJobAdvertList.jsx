@@ -11,12 +11,12 @@ useEffect(()=>{
 let jobAdvertService = new JobAdvertService();
 jobAdvertService.getAllActiveFalseAndOpenTrueJobAdverts().then((result)=>setJobAdverts(result.data.data))
 
-},[])
+},[jobAdverts])
 
 let changeIsActiveByEmployee = (id)=> {
     let jobAdvertService = new JobAdvertService();
     jobAdvertService.changeActiveStatus(id);
-    window.location.reload();
+  
 }
 
     return (

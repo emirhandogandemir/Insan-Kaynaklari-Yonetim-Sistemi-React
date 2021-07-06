@@ -36,7 +36,7 @@ export default function SkillUpdate({skill}) {
     
           skillService.update(values)
             .then( swal(`${values.name}`,"Update Edildi", "success"));
-            window.location.reload();
+        
         },
       });
    

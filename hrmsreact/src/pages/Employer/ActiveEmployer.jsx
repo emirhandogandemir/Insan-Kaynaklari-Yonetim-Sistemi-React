@@ -13,7 +13,7 @@ export default function ActiveEmployer() {
   verificationEmployerService.getById(20).then((result) => setVerificationEmployer(result.data.data));
   }, []);
   console.log(employer)
-  console.log(verificationEmployer)
+  //console.log(verificationEmployer)
   return (
     <div style={{ marginLeft: "200px", marginRight: "200px" }}>
      

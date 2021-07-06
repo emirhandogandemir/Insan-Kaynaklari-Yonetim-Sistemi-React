@@ -27,13 +27,20 @@ export default function Favorite({ jobAdvert }) {
 
   const handleAddToFavorite = (jobAdvert) => {
     dispatch(addToFavorite(jobAdvert));
-    favoriteService.add(values)
+
+{favoriteService.getByJobAdvertId(jobAdvert.id)===null ? 
+favoriteService.add(values)
+:favoriteService.delete()}
+
+    
     //toast.success("jobAdvert.jobPosition.jobTitle");
     console.log(jobAdvert.jobPosition.jobTitle);
   };
   return (
     <Rating
       onClick={() => handleAddToFavorite(jobAdvert)}
+    size="massive"
+    clearable
       icon="star"
       defaultRating={0}
       maxRating={1}

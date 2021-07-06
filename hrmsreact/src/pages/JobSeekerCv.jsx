@@ -22,7 +22,7 @@ export default function JobSeekerCv() {
     jobSeekerService
       .getByIdJobSeekerCv(1)
       .then((result) => setJobSeekerCvs(result.data.data));
-  }, []);
+  }, [jobSeekerCv]);
   console.log(jobSeekerCv);
 
   return (

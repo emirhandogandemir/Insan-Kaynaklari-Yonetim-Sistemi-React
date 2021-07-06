@@ -9,12 +9,12 @@ useEffect (()=>{
     let jobAdvertService = new JobAdvertService();
     jobAdvertService.getAllByEmployerId(11)// fake id verildi yine çünkü authorization yok
     .then((result)=>setJobAdverts(result.data.data))
-},[])
+},[jobAdverts])
 
 let changeIsOpenByEmployer = (id)=> {
     let jobAdvertService = new JobAdvertService();
     jobAdvertService.changeOpenStatus(id);
-    window.location.reload();
+   
 }
 
     

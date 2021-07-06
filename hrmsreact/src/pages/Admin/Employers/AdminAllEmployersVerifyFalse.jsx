@@ -11,12 +11,12 @@ export default function AdminAllEmployersVerifyFalse() {
     verificationEmployerService
       .getAllByVerifyFalse()
       .then((result) => setVerificationEmployers(result.data.data));
-  }, []);
+  }, [verificationEmployers]);
 
   let changeIsVerifiedStatus = (id) => {
     employerService.changeVerifiedStatus(id);
   };
-
+//console.log(verificationEmployers)
   return (
     <div>
       <Button fluid color="red">
@@ -67,9 +67,10 @@ export default function AdminAllEmployersVerifyFalse() {
   function handleVerifiedButtonClick(employer) {
 
   changeIsVerifiedStatus(employer.id);
-      employerService.update(employer);
-        setVerificationEmployers(
-        verificationEmployers.filter((emp) => emp.id !== employer.id)
-      );
+      console.log("updated")
+  employerService.update(employer).then(verificationEmployerService.delete(employer.id)).catch("Hata ile karşılaşıldı")
+    
+      console.log("deleted")
+
  }
 }
