@@ -1,25 +1,30 @@
 # Insan-Kaynaklari-Yonetim-Sistemi-React
-## Uml Component Diagramı Visual Paradigmde bu şekilde tasarladım
+
 
 ![ComponentUml](https://user-images.githubusercontent.com/74687192/121379406-a9e53380-c94c-11eb-9c78-d8b802f1484e.PNG)
 
 
-### React başlangıç çıktım bu şekildeydi
-![hrmsreact1](https://user-images.githubusercontent.com/74687192/121377703-3bec3c80-c94b-11eb-8710-32e3e54d4f5c.PNG)
-
-### React Doğrulamadam sonra projem bu şekile geldi
-![EmployerPanel](https://user-images.githubusercontent.com/74687192/122265058-f72f4b00-cee0-11eb-928f-0a80d0de5351.PNG)
 
 
-![HomePageReact](https://user-images.githubusercontent.com/74687192/122636910-6af57180-d0f4-11eb-90c3-bc40252c8f05.PNG)
 
 
-![AdminPaneli](https://user-images.githubusercontent.com/74687192/122265076-fb5b6880-cee0-11eb-9695-ffc986ca1780.PNG)
 
+
+
+
+
+Admin Paneli 
 ![adminPaneli](https://user-images.githubusercontent.com/74687192/133632552-7922044a-c499-440c-8cf4-3c2a1ddb779b.PNG)
+
+İşVeren tarafından alınan ekran
 ![İşVerenTarafındanGörüntü](https://user-images.githubusercontent.com/74687192/133632566-c7ca05f9-a816-445d-85d8-7287b138f3ae.PNG)
+
+cvye Eğitim ekleme kısmı
 ![eğitimEkle](https://user-images.githubusercontent.com/74687192/133632570-fd649666-710d-4841-9b64-49e6b67d0dae.PNG)
+
+Genel sistemdeki bireyin cv Görüntüsü
 ![cvHrms](https://user-images.githubusercontent.com/74687192/133632574-9e5ed202-7cb3-44cb-9b11-b7266035db80.PNG)
+
 ![favoriEkleme](https://user-images.githubusercontent.com/74687192/133632583-529179a6-c074-4c1d-a030-8d4429f3ad10.PNG)
 
 ### Faydalandığım kaynaklar
