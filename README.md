@@ -1,16 +1,6 @@
 # Insan-Kaynaklari-Yonetim-Sistemi-React
 
 
-![ComponentUml](https://user-images.githubusercontent.com/74687192/121379406-a9e53380-c94c-11eb-9c78-d8b802f1484e.PNG)
-
-
-
-
-
-
-
-
-
 
 
 Admin Paneli 
