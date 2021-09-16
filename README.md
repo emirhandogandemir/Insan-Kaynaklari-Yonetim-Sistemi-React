@@ -16,6 +16,12 @@
 
 ![AdminPaneli](https://user-images.githubusercontent.com/74687192/122265076-fb5b6880-cee0-11eb-9695-ffc986ca1780.PNG)
 
+![adminPaneli](https://user-images.githubusercontent.com/74687192/133632552-7922044a-c499-440c-8cf4-3c2a1ddb779b.PNG)
+![İşVerenTarafındanGörüntü](https://user-images.githubusercontent.com/74687192/133632566-c7ca05f9-a816-445d-85d8-7287b138f3ae.PNG)
+![eğitimEkle](https://user-images.githubusercontent.com/74687192/133632570-fd649666-710d-4841-9b64-49e6b67d0dae.PNG)
+![cvHrms](https://user-images.githubusercontent.com/74687192/133632574-9e5ed202-7cb3-44cb-9b11-b7266035db80.PNG)
+![favoriEkleme](https://user-images.githubusercontent.com/74687192/133632583-529179a6-c074-4c1d-a030-8d4429f3ad10.PNG)
+
 ### Faydalandığım kaynaklar
 ---
 - JavaScript Spread : [Javascript spread kullanımı](https://muratdogan.medium.com/sen-javascriptin-bir-lütfusun-spread-operatör-extended-version-fa5de70beaeb)
